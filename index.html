@@ -8,56 +8,286 @@
     
     <!--Foglio di stile-->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- IonIcons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
     </head>
 <body>
     
-    <div class="banner">
-        <video src="media/urbino.mp4" autoplay muted loop></video>
-    </div>
-    
-    <header>
-        <div class="logo">
-            <img src="media/logo.png" alt="Logo">
-        </div>
-        <input type="checkbox" id="nav_check" hidden>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Chi siamo</a></li>
-                <li><a href="#">Scopri</a></li>
-                <li><a href="#">Contatti</a></li>
-            </ul>
-        </nav>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </header>
+    <!-- Navbar -->
+    <nav>
+        <!-- Logo -->
+        <div class="logo">Urbino</div>
+        <label for="btn" class="icon">
+            <span class="fa fa-bars"><ion-icon name="menu-outline"></ion-icon></span>
+        </label>
+        <input type="checkbox" id="btn">
 
-    <div class="content">
+        <!-- Inizio elenco -->
+        <ul>
+            <!-- 1 -->
+            <li>
+                <label for="btn-1" class="show">Percorso +</label>
+                <a href="#">Percorso</a>
+                <input type="checkbox" id="btn-1">
+                <!-- Sottoelenco 1 -->
+                <ul>
+                    <li><a href="#">Itinerario</a></li>
+                    <li><a href="#">Tratte (GPX)</a></li>
+                    <li><a href="#">Preparati al percorso</a></li>
+                    <li><a href="#">Segnaletica</a></li>
+                    <li><a href="#">Credenziale</a></li>
+                </ul>
+            </li>
+
+            <!-- 2 -->
+            <li>
+                <label for="btn-2" class="show">Storia e geografia +</label>
+                <a href="#">Storia e geografia</a>
+                <input type="checkbox" id="btn-2">
+                <ul>
+                    <li><a href="#">Geologia del cammino</a></li>
+                    <li><a href="#">La storia dell'uomo</a></li>
+                    <li><a href="#">Storie e geografie del Duca</a></li>
+                    <li><a href="#">Geografia della cucina locale</a></li>
+                    <li><a href="#">Vino o birra?</a></li>
+                    <li><a href="#">Tradizioni</a></li>
+                    <li><a href="#">Natura e ambiente</a></li>
+                </ul> 
+            </li>
+
+            <!-- 3 -->
+            <li>
+                <label for="btn-3" class="show">Arrivare e muoversi +</label>
+                <a href="#">Arrivare e muoversi</a>
+                <input type="checkbox" id="btn-3">
+                <ul>
+                    <li><a href="#">Arrivare ad Urbino</a></li>
+                    <li><a href="#">Arrivare a Gubbio</a></li>
+                    <li><a href="#">Collegamenti Gubbio - Urbino</a></li>
+                    <li><a href="#">Noleggi</a></li>
+                    <li><a href="#">Autolinee</a></li>
+                    <li><a href="#">Taxi</a></li>
+                </ul>
+            </li>
+
+            <!-- 4 -->
+            <li>
+                <label for="btn-4" class="show">Dormire e mangiare +</label>
+                <a href="#">Dormire e mangiare</a>
+                <input type="checkbox" id="btn-4">
+                <ul>
+                    <li><a href="#">Hotel</a></li>
+                    <li><a href="#">B&B</a></li>
+                    <li><a href="#">Ostelli</a></li>
+                    <li><a href="#">Tende</a></li>
+                    <li><a href="#">Bar</a></li>
+                    <li><a href="#">Alimentari</a></li>
+                    <li><a href="#">Gastronomie</a></li>
+                    <li><a href="#">Osterie</a></li>
+                    <li><a href="#">Ristoranti</a></li>
+                    <li><a href="#">Pizzerie</a></li>
+                </ul>
+            </li>
+
+            <!-- 5 -->
+            <li>
+                <label for="btn-5" class="show">Attività e giochi +</label>
+                <a href="#">Attività e giochi</a>
+                <input type="checkbox" id="btn-5">
+                <ul>
+                    <li><a href="#">Test del camminatore</a></li>
+                    <li><a href="#">Contest fotografici</a></li>
+                    <li><a href="#">Viaggi di gruppo</a></li>
+                    <li><a href="#">Orientamento</a></li>
+                    <li><a href="#">Geologo per un giorno</a></li>
+                    <li><a href="#">Altre attività</a></li>
+                </ul>
+            </li>
+
+            <!-- 6 -->
+            <li>
+                <label for="btn-6" class="show">Info e sicurezza +</label>
+                <a href="#">Info e sicurezza</a>
+                <input type="checkbox" id="btn-6">
+                <ul>
+                    <li><a href="#">Numeri di emergenza</a></li>
+                    <li><a href="#">Primo e pronto soccorso</a></li>
+                    <li><a href="#">Guardie mediche</a></li>
+                    <li><a href="#">Farmacie</a></li>
+                    <li><a href="#">Pro loco</a></li>
+                    <li><a href="#">IAT</a></li>
+                </ul>
+            </li>
+
+            <!--<li>
+                <div class="others">
+                    <div class="languages">
+                        <a href="#"><ion-icon name="language-outline"></ion-icon></a>
+                    </div>
+                    <div class="login">
+                        <a href="#"><ion-icon name="person-outline"></ion-icon></a>
+                    </div>
+                </div>
+            </li>-->
+
+
+            <!-- Traduzione e login -->
+            <li class="lang-log">
+                <a href="#"><ion-icon name="language-outline"></ion-icon></a>
+                <a href="#"><ion-icon name="person-outline"></ion-icon></a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero Text -->
+    <div class="hero-content">
         <p>Il cammino del Duca</p>
         <div class="space"></div>
         <a href="#">Esplora</a>
     </div>
+
+    <!-- Carousel -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="media/1.jpg" style="width: 100%;">
+            <div class="text">Urbino</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="media/2.jpg" style="width: 100%;">
+            <div class="text">Gubbio</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="media/3.jpg" style="width: 100%;">
+            <div class="text">Scheggia</div>
+        </div>
+
+        <a href="#" class="prev" onclick="plusSlides(-1)"><ion-icon name="chevron-back-circle-outline" style="font-size: 35px;"></ion-icon></a>
+        <a href="#" class="next" onclick="plusSlides(1)"><ion-icon name="chevron-forward-circle-outline" style="font-size: 35px;"></ion-icon></a>
+    </div>
+    
+    <br>
+    
+    <div style="text-align: center;">
+        <span class="dot" onclick="currentSlides(1)"></span>
+        <span class="dot" onclick="currentSlides(2)"></span>
+        <span class="dot" onclick="currentSlides(3)"></span>
+    </div>
+
+
     
 
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Comuni</h4>
+                    <ul class="footer-list-1">
+                        <li><a href="#">Comune di Urbino</a></li>
+                        <li><a href="#">Comune di Fermignano</a></li>
+                        <li><a href="#">Comune di Cagli</a></li>
+                        <li><a href="#">Comune di Gubbio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Comuni</h4>
+                    <ul class="footer-list-2">
+                        <li><a href="#">Comune di Urbino</a></li>
+                        <li><a href="#">Comune di Fermignano</a></li>
+                        <li><a href="#">Comune di Cagli</a></li>
+                        <li><a href="#">Comune di Gubbio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Comuni</h4>
+                    <ul class="footer-list-3">
+                        <li><a href="#">Comune di Urbino</a></li>
+                        <li><a href="#">Comune di Fermignano</a></li>
+                        <li><a href="#">Comune di Cagli</a></li>
+                        <li><a href="#">Comune di Gubbio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Comuni</h4>
+                    <div class="social-link">
+                        <!--<a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>-->
+                        <input type="text" name="" id="newsletter">
+                        <input type="button" id="btn-newsletter" value="Invia">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     <script>
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".nav-list");
+        var slideIndex = 1;
+        showSlides(slideIndex);
 
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            navMenu.classList.toggle("active");
-        })
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
 
-        document.querySelectorAll("li").forEach(
-            n => n.addEventListener("click", () => {
-                hamburger.classList.remove("active");
-                navMenu.classList.remove("active");
-            })
-        )
+        function currentSlides(n){
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n){
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if(n > slides.length){
+                slideIndex = 1;
+            }
+
+            if(n < 1){
+                slideIndex = slides.length; 
+            }
+
+            for(i=0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+
+            for(i=0; i < dots.length; i++){
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += "active";
+        }
+
+        //auto slide
+        var autoslideIndex = 0;
+        autoshowSlides();
+
+        function autoshowSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            
+            for(i=0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+
+            autoslideIndex++;
+            if(autoslideIndex > slides.length){
+                autoslideIndex = 1;
+            }
+            slides[autoslideIndex - 1].style.display = "block";
+            setTimeout(autoshowSlides, 3000);
+        }
     </script>
 
 </body>
