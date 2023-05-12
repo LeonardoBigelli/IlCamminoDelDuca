@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300,600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -103,7 +103,8 @@ img{
 }
 
 nav{
-    background: #282828;
+    /*background: #282828;*/
+    background: #eaeaea;
 }
 
 nav:after{
@@ -122,12 +123,13 @@ nav ul{
 nav ul li{
     float: left;
     display: inline-block;
-    background: #282828;
+    /*background: #282828;*/
+    background: #eaeaea;
     margin: 0 5px;
 }
 
 nav ul li a{
-    color: white;
+    color: #292929;
     text-decoration: none;
     line-height: 70px;
     font-size: 16px;
@@ -175,16 +177,17 @@ nav .logo{
     float: left;
     line-height: 70px;
     font-size: 27px;
-    color: white;
+    color: #292929;
     padding-left: 60px;
     font-weight: 600;
 }
 
 nav ul li a:hover{
     border-radius: 5px;
-    color: cyan;
-    box-shadow: 0 0 5px #33ffff,
-                0 0 5px #66ffff;
+    color: #eaeaea;
+    box-shadow: 0 0 5px #292929,
+                0 0 5px #292929;
+                background: #292929;
 }
 
 .show, .icon, input{
@@ -206,6 +209,9 @@ nav ul li a:hover{
     float: left;
 }
 
+
+
+
 #slider{
     overflow: hidden;
 }
@@ -222,6 +228,11 @@ nav ul li a:hover{
     width: 20%;
     float: left;
 }
+
+
+
+
+
 
 /*----- Footer -----*/
 .container{
@@ -305,8 +316,7 @@ nav ul li a:hover{
 
 
 
-
-
+/*---- Responsive ----*/
 @media all and (max-width: 1140px) {
     nav ul{
         margin-right: 0px;
@@ -417,6 +427,37 @@ nav ul li a:hover{
 /*----- Hero div -----*/
 .hero-content{
     position: absolute;
-    margin-left: 50%;
+    width: 100%;
+    right: 0;
     z-index: 999;
+    text-align: center;
+    margin-top: 200px;
 }
+
+.hero-content p{
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+}
+
+.hero-content a{
+    border: 2px solid #292929;
+    padding: 5px 20px;
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.space{
+    height: 15px;
+}
+
+.hero-content a:hover{
+    background: #292929;
+    color: #fff;
+}
+
+
+
