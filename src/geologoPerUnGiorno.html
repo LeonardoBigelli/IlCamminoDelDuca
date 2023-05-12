@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+    <header>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Geologo per un giorno</title>
+        
+        <!--css-->
+        <link rel="stylesheet" href="css/style.css">
+    </header>
+
+    <body>
+        <div class="titolo">
+            <h1>Geologo per un giorno</h1>
+            <p></p>
+        </div>
+
+        <div class="imageSlides">
+            <img class="animation" src="media/1_fieldmap.jpg">
+            <img class="animation" src="media/2_geomap.jpg">
+        </div>
+
+        <script>
+            var myIndex = 0;
+            carousel();
+            
+            function carousel() {
+              var i;
+              var x = document.getElementsByClassName("animation");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              myIndex++;
+              if (myIndex > x.length) {myIndex = 1}    
+              x[myIndex-1].style.display = "block";  
+              setTimeout(carousel, 2000); // Change image every 2 seconds
+            }
+        </script>
+    </body>
+</html>
