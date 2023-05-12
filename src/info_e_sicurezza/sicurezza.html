@@ -4,145 +4,215 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info e Sicurezza</title>
+    <title>Info e sicurezza</title>
     
-    <!--Foglio di stile-->
+    <!--Foglio di stile del menù -->
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <!-- Mio foglio di stile -->
     <link rel="stylesheet" href="../css/style.css">
     
+    <!-- IonIcons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
-    <!-- Navbar -->
-    <nav>
-        <!-- Logo -->
-        <div class="logo">Urbino</div>
-        <label for="btn" class="icon">
-            <span class="fa fa-bars"><ion-icon name="menu-outline"></ion-icon></span>
-        </label>
-        <input type="checkbox" id="btn">
-
-        <!-- Inizio elenco -->
-        <ul>
-            <!-- 1 -->
-            <li>
-                <label for="btn-1" class="show">Percorso +</label>
-                <a href="#">Percorso</a>
-                <input type="checkbox" id="btn-1">
-                <!-- Sottoelenco 1 -->
-                <ul>
-                    <li><a href="#">Itinerario</a></li>
-                    <li><a href="#">Tratte (GPX)</a></li>
-                    <li><a href="#">Preparati al percorso</a></li>
-                    <li><a href="#">Segnaletica</a></li>
-                    <li><a href="#">Credenziale</a></li>
-                </ul>
-            </li>
-
-            <!-- 2 -->
-            <li>
-                <label for="btn-2" class="show">Storia e geografia +</label>
-                <a href="#">Storia e geografia</a>
-                <input type="checkbox" id="btn-2">
-                <ul>
-                    <li><a href="#">Geologia del cammino</a></li>
-                    <li><a href="#">La storia dell'uomo</a></li>
-                    <li><a href="#">Storie e geografie del Duca</a></li>
-                    <li><a href="#">Geografia della cucina locale</a></li>
-                    <li><a href="#">Vino o birra?</a></li>
-                    <li><a href="#">Tradizioni</a></li>
-                    <li><a href="#">Natura e ambiente</a></li>
-                </ul> 
-            </li>
-
-            <!-- 3 -->
-            <li>
-                <label for="btn-3" class="show">Arrivare e muoversi +</label>
-                <a href="#">Arrivare e muoversi</a>
-                <input type="checkbox" id="btn-3">
-                <ul>
-                    <li><a href="#">Arrivare ad Urbino</a></li>
-                    <li><a href="#">Arrivare a Gubbio</a></li>
-                    <li><a href="#">Collegamenti Gubbio - Urbino</a></li>
-                    <li><a href="#">Noleggi</a></li>
-                    <li><a href="#">Autolinee</a></li>
-                    <li><a href="#">Taxi</a></li>
-                </ul>
-            </li>
-
-            <!-- 4 -->
-            <li>
-                <label for="btn-4" class="show">Dormire e mangiare +</label>
-                <a href="#">Dormire e mangiare</a>
-                <input type="checkbox" id="btn-4">
-                <ul>
-                    <li><a href="#">Hotel</a></li>
-                    <li><a href="#">B&B</a></li>
-                    <li><a href="#">Ostelli</a></li>
-                    <li><a href="#">Tende</a></li>
-                    <li><a href="#">Bar</a></li>
-                    <li><a href="#">Alimentari</a></li>
-                    <li><a href="#">Gastronomie</a></li>
-                    <li><a href="#">Osterie</a></li>
-                    <li><a href="#">Ristoranti</a></li>
-                    <li><a href="#">Pizzerie</a></li>
-                </ul>
-            </li>
-
-            <!-- 5 -->
-            <li>
-                <label for="btn-5" class="show">Attività e giochi +</label>
-                <a href="#">Attività e giochi</a>
-                <input type="checkbox" id="btn-5">
-                <ul>
-                    <li><a href="#">Test del camminatore</a></li>
-                    <li><a href="#">Contest fotografici</a></li>
-                    <li><a href="#">Viaggi di gruppo</a></li>
-                    <li><a href="#">Orientamento</a></li>
-                    <li><a href="#">Geologo per un giorno</a></li>
-                    <li><a href="#">Altre attività</a></li>
-                </ul>
-            </li>
-
-            <!-- 6 -->
-            <li>
-                <label for="btn-6" class="show">Info e sicurezza +</label>
-                <a href="#">Info e sicurezza</a>
-                <input type="checkbox" id="btn-6">
-                <ul>
-                    <li><a href="#">Numeri di emergenza</a></li>
-                    <li><a href="#">Primo e pronto soccorso</a></li>
-                    <li><a href="#">Guardie mediche</a></li>
-                    <li><a href="#">Farmacie</a></li>
-                    <li><a href="#">Pro loco</a></li>
-                    <li><a href="#">IAT</a></li>
-                </ul>
-            </li>
-
-            <!--<li>
-                <div class="others">
-                    <div class="languages">
-                        <a href="#"><ion-icon name="language-outline"></ion-icon></a>
-                    </div>
-                    <div class="login">
-                        <a href="#"><ion-icon name="person-outline"></ion-icon></a>
-                    </div>
-                </div>
-            </li>-->
-
-            <!-- Traduzione e login -->
-            <li class="lang-log">
-                <a href="#"><ion-icon name="language-outline"></ion-icon></a>
-                <a href="#"><ion-icon name="person-outline"></ion-icon></a>
-            </li>
-        </ul>
-    </nav>
-
     </head>
-</head>
-
 <body>
-
     
+    <!-- COMPRENDE TUTTO -->
+    <div id="struttura_principale">
+
+        <!-- COMPRENDE MENU -->
+        <div id="menu">
+            <!-- BARRA DI NAVIGAZIONE -->
+            <!-- Navbar -->
+            <nav>
+                <!-- Logo -->
+                <div class="logo">Urbino</div>
+                <label for="btn" class="icon">
+                    <span class="fa fa-bars"><ion-icon name="menu-outline"></ion-icon></span>
+                </label>
+                <input type="checkbox" id="btn">
+
+                <!-- Inizio elenco -->
+                <ul>
+                    <!-- 1 -->
+                    <li>
+                        <label for="btn-1" class="show">Percorso e Tratte +</label>
+                        <a href="#">Percorso e Tratte</a>
+                        <input type="checkbox" id="btn-1">
+                        <!-- Sottoelenco 1 -->
+                        <ul>
+                            <li><a href="#">Itinerario (WebGIS)</a></li>
+                            <li><a href="#">Tratte (GPX)</a></li>
+                            <li><a href="#">Preparati al percorso</a></li>
+                            <li><a href="#">Segnaletica</a></li>
+                            <li><a href="#">Credenziale</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- 2 -->
+                    <li>
+                        <label for="btn-2" class="show">Storia e geografia +</label>
+                        <a href="#">Storia e geografia</a>
+                        <input type="checkbox" id="btn-2">
+                        <ul>
+                            <li><a href="#">Geologia del cammino</a></li>
+                            <li><a href="#">La storia dell'uomo</a></li>
+                            <li><a href="#">Storie e geografie del Duca</a></li>
+                            <li><a href="#">Geografia della cucina locale</a></li>
+                            <li><a href="#">Vino o birra?</a></li>
+                            <li><a href="#">Tradizioni</a></li>
+                            <li><a href="#">Natura e ambiente</a></li>
+                        </ul> 
+                    </li>
+
+                    <!-- 3 -->
+                    <li>
+                        <label for="btn-3" class="show">Arrivare e muoversi +</label>
+                        <a href="#">Arrivare e muoversi</a>
+                        <input type="checkbox" id="btn-3">
+                        <ul>
+                            <li><a href="#">Arrivare ad Urbino</a></li>
+                            <li><a href="#">Arrivare a Gubbio</a></li>
+                            <li><a href="#">Collegamenti Gubbio - Urbino</a></li>
+                            <li><a href="#">Noleggi</a></li>
+                            <li><a href="#">Autolinee</a></li>
+                            <li><a href="#">Taxi</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- 4 -->
+                    <li>
+                        <label for="btn-4" class="show">Dormire e mangiare +</label>
+                        <a href="#">Dormire e mangiare</a>
+                        <input type="checkbox" id="btn-4">
+                        <ul>
+                            <li><a href="#">Hotel</a></li>
+                            <li><a href="#">B&B</a></li>
+                            <li><a href="#">Ostelli</a></li>
+                            <li><a href="#">Tende</a></li>
+                            <li><a href="#">Bar</a></li>
+                            <li><a href="#">Alimentari</a></li>
+                            <li><a href="#">Gastronomie</a></li>
+                            <li><a href="#">Osterie</a></li>
+                            <li><a href="#">Ristoranti</a></li>
+                            <li><a href="#">Pizzerie</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- 5 -->
+                    <li>
+                        <label for="btn-5" class="show">Attività e giochi +</label>
+                        <a href="#">Attività e giochi</a>
+                        <input type="checkbox" id="btn-5">
+                        <ul>
+                            <li><a href="#">Test del camminatore</a></li>
+                            <li><a href="#">Contest fotografici</a></li>
+                            <li><a href="#">Viaggi di gruppo</a></li>
+                            <li><a href="#">Orientamento</a></li>
+                            <li><a href="#">Geologo per un giorno</a></li>
+                            <li><a href="#">Altre attività</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- 6 -->
+                    <li>
+                        <label for="btn-6" class="show">Info e sicurezza +</label>
+                        <a href="#">Info e sicurezza</a>
+                        <input type="checkbox" id="btn-6">
+                        <ul>
+                            <li><a href="#">Numeri di emergenza</a></li>
+                            <li><a href="#">Primo e pronto soccorso</a></li>
+                            <li><a href="#">Guardie mediche</a></li>
+                            <li><a href="#">Farmacie</a></li>
+                            <li><a href="#">Pro loco</a></li>
+                            <li><a href="#">IAT</a></li>
+                        </ul>
+                    </li>
+
+                    <!--<li>
+                        <div class="others">
+                            <div class="languages">
+                                <a href="#"><ion-icon name="language-outline"></ion-icon></a>
+                            </div>
+                            <div class="login">
+                                <a href="#"><ion-icon name="person-outline"></ion-icon></a>
+                            </div>
+                        </div>
+                    </li>-->
+
+
+                    <!-- Traduzione e login -->
+                    <li class="lang-log">
+                        <a href="#"><ion-icon name="language-outline"></ion-icon></a>
+                        <a href="#"><ion-icon name="person-outline"></ion-icon></a>
+                    </li>
+                </ul>
+            </nav>   
+            <!-- FINE BARRA DI NAVIGAZIONE -->
+        </div>
+
+        <!-- COMPRENDE i CONTENUTI -->
+        <div id="contenuti">
+
+            <!-- Titolo -->
+            <div id="struttura_titolo" class="intro">
+                <h1 class="titolo">Info e sicurezza</h1>
+            </div>
+
+        </div>
+
+
+        <!-- COMPRENDE IL FOOTER -->
+        <div id ="footer">
+
+
+        </div>
+
+    </div>
+</body>
+</html>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!--
          <div class="content">
         <p></p>
@@ -150,7 +220,3 @@
         <iframe src="https://www.google.com/maps/d/embed?mid=139kePYT3XLJFKYtHBs1p41WDBsM31Aw&ehbc=2E312F" width="640" height="480"></iframe>
     </div>
     -->
-
-    
-</body>
-</html>

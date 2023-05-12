@@ -1,0 +1,29 @@
+#struttura_principale{
+    width: 100%;
+	margin: 0 auto; 
+	padding: 0; 
+}
+
+#contenuti{
+    width: 100%;
+    margin: 0 auto;
+}
+
+#struttura_titolo{
+    float: left;
+    width: 50%;
+}
+
+.titolo{
+    display: flex;
+}
+
+h1{
+    /*text-align: center;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
