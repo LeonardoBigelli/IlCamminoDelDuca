@@ -27,16 +27,7 @@ h1{
 
 .image-container img{
     width: 100%;
-    height: 600px;
+    height: 500px;
 }
 
-.hero{
-    font-size: 80px;
-    font-weight: bold;
-    color: #fff;
-    font-family: 'Dancing Script', cursive;
-    font-family: 'Great Vibes', cursive;
-    user-select: none;
-    text-shadow: 2px 2px #000;
-}
 
