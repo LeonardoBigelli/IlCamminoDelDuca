@@ -4,28 +4,20 @@
 	padding: 0; 
 }
 
-#contenuti{
-    width: 100%;
-    margin: 0 auto;
-}
-
-#struttura_titolo{
-    float: left;
-    width: 50%;
-}
-
 .titolo{
-    float: left;
-    display: flex;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h1{
-    text-align: center;
+    /*text-align: center;*/
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-
-
-
+.mappa{
+    position:relative;align-items: center;
+    justify-content: center;
+}
