@@ -149,7 +149,7 @@ selectSectionsInteraction.on("select", event =>
 });
 
 //Section popup init.
-closer = document.getElementById('popup-sections-closer');
+closer = document.getElementById('popup-poi-closer');
 
 const popupPOI = new Overlay(
     {

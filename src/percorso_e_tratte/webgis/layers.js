@@ -6,7 +6,7 @@ import {all as allStrategy} from "ol/loadingstrategy";
 import VectorLayer from "ol/layer/Vector";
 import {Circle, Fill, Icon, RegularShape, Stroke, Style} from "ol/style";
 
-const geoserverUrl = "http://192.168.1.239:8080" //Switch with real url.
+const geoserverUrl = "http://192.168.1.239:8080" //TODO: Switch with real url.
 const geoserverRequestUrl =	geoserverUrl + "/geoserver/cammino-urbinogubbio/wfs?service=WFS" +
 	"&version=1.3.0" +
 	"&request=GetFeature" +
