@@ -8,6 +8,8 @@
     display:flex;
     align-items: center;
     justify-content: center;
+    margin: 10px 10px;
+    font-size: 40px;
 }
 
 h1{
@@ -15,6 +17,7 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family:sans-serif;
 }
 
 .image-container{
@@ -40,3 +43,11 @@ h1{
     text-shadow: 2px 2px #000;
 }
 
+h3, h4, p{
+    font-family:Tahoma sans-serif;
+    font-size: 20px;
+}
+
+.section{
+    margin: 10px 120px 120px;
+}
