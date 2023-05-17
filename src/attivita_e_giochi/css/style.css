@@ -15,7 +15,6 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .image img{
@@ -23,9 +22,20 @@ h1{
     width: auto;
 }
 
-#struttura_titolo{
+#struttura_immagine1{
     float: left;
     width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#descrizione{
+    float: left;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #right{
@@ -58,4 +68,9 @@ h1{
     display: flex;
     align-items:start;
     justify-content: center;
+}
+
+#img1{
+    width:40%; /* or whatever width you want. */
+    height:70%; /* or whatever width you want. */
 }
