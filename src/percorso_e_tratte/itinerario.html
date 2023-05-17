@@ -11,7 +11,11 @@
     <!-- IonIcons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    
+    <!--WebGIS-->
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
+    <script type="module" src="./webgis/main.js"></script>
+
     </head>
 <body>
     <!-- Navbar -->
@@ -133,10 +137,9 @@
     </div>
 
     <div id="webGIS">
-        Qui va il webgis
     </div>
 
-    <div class="container" style="position: fixed;bottom: 0;width: 100%;font-family: 'Wix Madefor Display', sans-serif;">
+    <div class="container" style="bottom: 0;width: 100%;font-family: 'Wix Madefor Display', sans-serif;">
         <div class="row">
             <div class="footer-col">
                 <h4>Contatti</h4>
@@ -159,6 +162,21 @@
                     <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!--Popup Webgis-->
+    <div id="popup-sections" class="popup">
+        <a href="#" id="popup-sections-closer" class="ol-popup-closer"></a>
+        <div id="popup-sections-content">
+            <h4>Sezioni geologiche</h4>
+            <img id="section-img" class="popup-img" src="/sections/{PATH}" alt="">
+        </div>
+    </div>
+    <div id="popup-poi" class="popup">
+        <a href="#" class="ol-popup-closer"></a>
+        <div id="popup-poi-content">
+        <!--Add popup content-->
         </div>
     </div>
 </html>
