@@ -232,12 +232,17 @@ selectPOIInteraction.on("select", event =>
     const nameElement = document.getElementById("poi-name");
     const typeElement = document.getElementById("poi-type");
     const siteElement = document.getElementById("poi-site");
+    const siteContentElement = document.getElementById("poi-site-element");
     const phoneElement = document.getElementById("poi-phone");
+    const phoneContentElement = document.getElementById("poi-phone-element");
+
+    console.log(feature.getProperties());
 
     nameElement.innerText = poiName;
     typeElement.innerText = poiType;
-    siteElement.href = poiSite;
-    phoneElement.innerText = "Telefono: " + poiPhone;
+    siteContentElement.href = poiSite;
+    phoneContentElement.innerText = poiPhone;
+    phoneElement.href = "tel:" + poiPhone;
 
     typeElement.hidden = !poiType;
     siteElement.hidden = !poiSite;
