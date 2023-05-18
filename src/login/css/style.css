@@ -34,22 +34,22 @@ body {
 }
 /* close commented backslash hack */
 a {
-  color: #00A885;
+  color: #314fb4;
 }
 a:hover,
 a:focus {
-  color: #00755d;
+  color:  #314fb4;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
-.text-primary {
-  color: #00A885;
+.text-primary { /*#00A885;*/
+  color: #314fb4;
 }
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px white inset !important;
 }
 .logo h1 {
-  color: #00A885;
+  color:  #314fb4;
   margin-bottom: -12px;
 }
 input[type="checkbox"] {
@@ -57,7 +57,7 @@ input[type="checkbox"] {
 }
 button {
   cursor: pointer;
-  background: #00A885;
+  background: #314fb4;
   width: 100%;
   border: 0;
   padding: 10px 15px;
@@ -112,7 +112,7 @@ span.validate-tooltip {
   transition: 0.3s ease;
 }
 .input-group .lighting {
-  background: #00A885;
+  background: #fffc2e;
   width: 0;
   height: 2px;
   display: inline-block;
@@ -130,7 +130,7 @@ span.validate-tooltip {
   font-size: 12px;
   top: -8px;
   left: 5px;
-  color: #00A885;
+  color:  #314fb4;
 }
 .input-group span.validate-tooltip {
   margin-top: 0;
