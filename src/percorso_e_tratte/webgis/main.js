@@ -5,18 +5,28 @@ import "ol-layerswitcher/dist/ol-layerswitcher.css"
 import {Map, Overlay, View} from 'ol';
 import {Select} from "ol/interaction";
 import {click} from "ol/events/condition";
-import {foodAndSleepLayer, mapLayer, sectionsLayer, tracksLayer} from "./layers";
+import {
+    foodAndSleepLayer,
+    iconBackground,
+    iconColor, iconPath,
+    infoAndSafetyLayer,
+    mapLayer,
+    sectionsLayer,
+    tracksLayer
+} from "./layers";
 import {Popover} from "bootstrap";
 import LayerSwitcher from "ol-layerswitcher";
 import LayerGroup from "ol/layer/Group";
+import {Icon, Stroke, Style} from "ol/style";
 
 const viewStartingPos = [1409646.026322705, 5394869.494452778]; //Starting position of the view.
 
 //Function use to change the style of the selected section feature.
 function onSelectSectionStyle(feature)
 {
+    const color = "rgba(227, 31, 31, 0.63)";
     const style = sectionsLayer.getStyle().clone();
-    style.getStroke().setColor("rgba(227,31,31,0.63)");
+    style.getStroke().setColor(color);
     return style;
 }
 
@@ -24,13 +34,30 @@ function onSelectSectionStyle(feature)
 //Function use to change the style of the selected poi feature.
 function onSelectPOInStyle(feature)
 {
-    const style = sectionsLayer.getStyle().clone();
-    style.getStroke().setColor("rgba(227,31,31,0.63)");
+    const icon = feature.get("icona");
+    const color = "#ff0000";
+
+    const style =
+        [
+            new Style(
+                {
+                    image: iconBackground
+                }),
+            new Style(
+                {
+                    image: new Icon(
+                        {
+                            src: iconPath + icon,
+                            color: color,
+                            scale: 0.03,
+                        })
+                })
+        ];
     return style;
 }
 
 //Extent:
-//[ 1397142.4969995867, 5362888.233718974, 1421189.678525492, 5425968.900521599 ]
+//[1397142.4969995867, 5362888.233718974, 1421189.678525492, 5425968.900521599]
 //Create starting view.
 const mapView = new View(
     {
@@ -42,7 +69,7 @@ const mapView = new View(
 const pointOfInterestLayerGroup = new LayerGroup(
     {
        title: "Punti di interesse",
-       layers: [foodAndSleepLayer]
+       layers: [foodAndSleepLayer, infoAndSafetyLayer]
     });
 
 //Create map with the layers.
@@ -126,7 +153,7 @@ const selectSectionsInteraction = new Select(
     });
 map.addInteraction(selectSectionsInteraction);
 
-//Selection callback.
+//Section selection callback.
 selectSectionsInteraction.on("select", event =>
 {
     //If no feature is select remove the popup.
@@ -148,7 +175,7 @@ selectSectionsInteraction.on("select", event =>
     imgElement.setAttribute("src", sectionsImgPath.replace("{PATH}", pngPath));
 });
 
-//Section popup init.
+//POI popup init.
 closer = document.getElementById('popup-poi-closer');
 
 const popupPOI = new Overlay(
@@ -159,7 +186,8 @@ const popupPOI = new Overlay(
                 duration: 250,
             },
         },
-        positioning: "top-center"
+        positioning: "top-center",
+        offset: [0, -10]
     });
 map.addOverlay(popupPOI);
 
@@ -174,7 +202,7 @@ closer.onclick = function ()
 const selectPOIInteraction = new Select(
     {
         condition: click,
-        style: onSelectSectionStyle,
+        style: onSelectPOInStyle,
         filter: (feature, layer) =>
             pointOfInterestLayerGroup.getLayersArray().includes(layer),
     });
@@ -195,6 +223,24 @@ selectPOIInteraction.on("select", event =>
 
     //Get the feature data.
     const feature = event.selected[0];
+    const poiName = feature.get("nome");
+    const poiType = feature.get("tipo");
+    const poiSite = feature.get("sito_web");
+    const poiPhone = feature.get("telefono");
 
-    console.log(feature.getProperties());
+    //Elements of the popup.
+    const nameElement = document.getElementById("poi-name");
+    const typeElement = document.getElementById("poi-type");
+    const siteElement = document.getElementById("poi-site");
+    const phoneElement = document.getElementById("poi-phone");
+
+    nameElement.innerText = poiName;
+    typeElement.innerText = poiType;
+    siteElement.href = poiSite;
+    phoneElement.innerText = "Telefono: " + poiPhone;
+
+    typeElement.hidden = !poiType;
+    siteElement.hidden = !poiSite;
+    phoneElement.hidden = !poiPhone;
+
 });

@@ -6,6 +6,7 @@ import {all as allStrategy} from "ol/loadingstrategy";
 import VectorLayer from "ol/layer/Vector";
 import {Circle, Fill, Icon, RegularShape, Stroke, Style} from "ol/style";
 
+//Request url for geoserver layers.
 const geoserverUrl = "http://192.168.1.239:8080" //TODO: Switch with real url.
 const geoserverRequestUrl =	geoserverUrl + "/geoserver/cammino-urbinogubbio/wfs?service=WFS" +
 	"&version=1.3.0" +
@@ -15,7 +16,14 @@ const geoserverRequestUrl =	geoserverUrl + "/geoserver/cammino-urbinogubbio/wfs?
 	"&typename=cammino-urbinogubbio:{LAYER_NAME}" +
 	"&bbox={BBOX},EPSG:4326";
 
-const iconPath = "webgis/icons/";
+//Init GeoJson format.
+const geoJson = new GeoJSON(
+	{
+		dataProjection: "EPSG:4326",
+		extractGeometryName: true,
+	});
+
+export const iconPath = "webgis/icons/";
 
 //Tile layer source.
 const mapLayerParam =
@@ -32,7 +40,7 @@ export const mapLayer = new TileLayer(mapLayerParam);
 //Track layer source from geoserver.
 const trackSource = new VectorSource(
 	{
-		format: new GeoJSON({dataProjection: 'EPSG:4326'}),
+		format: geoJson,
 		url: function (extent,)
 		{
 			return geoserverRequestUrl
@@ -60,10 +68,7 @@ export const tracksLayer = new VectorLayer(
 //Sections layer source from geoserver.
 const sectionsSource = new VectorSource(
 	{
-		format: new GeoJSON({
-			dataProjection: "EPSG:4326",
-			extractGeometryName: true,
-		}),
+		format: geoJson,
 		url: function (extent)
 		{
 			return geoserverRequestUrl
@@ -89,13 +94,27 @@ export const sectionsLayer = new VectorLayer(
 			}),
 	});
 
+//Icon colors.
+export const iconColor = "#000000";
+export const backgroundColor = "#ffffff";
+export const iconBackground = new RegularShape(
+	{
+		fill: new Fill({color: backgroundColor}),
+		stroke: new Stroke(
+			{
+				color: iconColor,
+				width: 2
+			}),
+		points: 16,
+		radius: 13,
+		rotation: 3.14 / 4,
+		declutterMode: "obstacle"
+	});
+
 //Food and sleep layer source from geoserver.
 const foodAndSleepSource = new VectorSource(
 	{
-		format: new GeoJSON({
-			dataProjection: "EPSG:4326",
-			extractGeometryName: true,
-		}),
+		format: geoJson,
 		url: function (extent)
 		{
 			return geoserverRequestUrl
@@ -110,7 +129,7 @@ export const foodAndSleepLayer = new VectorLayer(
 	{
 		source: foodAndSleepSource,
 		title: "Mangiare e dormire",
-		style: function (feature, index)
+		style: function (feature)
 		{
 			const icon = feature.get("icona");
 
@@ -118,29 +137,60 @@ export const foodAndSleepLayer = new VectorLayer(
 				[
 					new Style(
 					{
-						image: new RegularShape(
-							{
-								fill: new Fill({color: "rgba(0, 0 , 0, 1)"}),
-								stroke: new Stroke(
-									{
-										color: "#ffffff"
-									}),
-								points: 16,
-								radius: 10,
-								rotation: 3.14 / 4,
-								declutterMode: "obstacle"
-							}),
+						image: iconBackground
 					}),
 					new Style(
 					{
 						image: new Icon(
 							{
 								src: iconPath + icon,
-								color: "#ffffff",
-								scale: 0.03
-
+								color: iconColor,
+								scale: 0.03,
 							})
 					})
+				];
+
+			return style;
+		}
+	});
+
+//Info and safety layer source from geoserver.
+const infoAndSafetySource = new VectorSource(
+	{
+		format: geoJson,
+		url: function (extent)
+		{
+			return geoserverRequestUrl
+				.replace("{LAYER_NAME}", "info_safety")
+				.replace("{BBOX}", extent.join(","));
+		},
+		strategy: allStrategy
+	})
+
+//Info and safety layer.
+export const infoAndSafetyLayer = new VectorLayer(
+	{
+		source: infoAndSafetySource,
+		title: "Info e sicurezza",
+		style: function (feature)
+		{
+			const icon = feature.get("icona");
+
+			const style =
+				[
+					new Style(
+						{
+							image: iconBackground
+						}),
+					new Style(
+						{
+							image: new Icon(
+								{
+									src: iconPath + icon,
+									color: iconColor,
+									scale: 0.03
+								})
+						})
 				];
 
 			return style;
