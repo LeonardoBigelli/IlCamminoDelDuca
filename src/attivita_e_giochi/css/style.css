@@ -22,10 +22,8 @@ h1{
     width: auto;
 }
 
-#struttura_immagine1{
-    float: left;
-    width: 50%;
-    display: flex;
+.struttura_immagine1{
+    /*display: flex;*/
     align-items: center;
     justify-content: center;
 }
@@ -52,7 +50,7 @@ h1{
     justify-content: center;
 }*/
 
-#struttura_principale{
+.struttura_principale{
     background-image: url("../media/wallpaper.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -70,7 +68,41 @@ h1{
     justify-content: center;
 }
 
-#img1{
+.img1{
     width:40%; /* or whatever width you want. */
     height:70%; /* or whatever width you want. */
+}
+
+.img2{
+    width:40%; /* or whatever width you want. */
+    height:70%; /* or whatever width you want. */
+}
+
+.section {
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+
+#content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  #centered-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.space-footer{
+    height: 90px;
+}
+
+#info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
