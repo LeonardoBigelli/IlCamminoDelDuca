@@ -1,4 +1,4 @@
-#webGIS
+.map-container
 {
   height: 70vh;
   margin: 20px
@@ -13,6 +13,48 @@
 .layer input
 {
   display: block !important;
+}
+
+.panel
+{
+  font-family: Calibri, serif;
+}
+
+.map-legend
+{
+  top: 65px;
+  left: .5em;
+  width: fit-content;
+  height: auto;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  position: absolute;
+  font-family: Calibri, serif;
+}
+
+.map-legend:after, .map-legend:before
+{
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.map-legend-container
+{
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.icon-legend
+{
+  filter: invert(100%);
 }
 
 .popup

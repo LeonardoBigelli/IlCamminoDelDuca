@@ -18,6 +18,8 @@ import {Popover} from "bootstrap";
 import LayerSwitcher from "ol-layerswitcher";
 import LayerGroup from "ol/layer/Group";
 import {Icon, Stroke, Style} from "ol/style";
+import {Control, defaults} from "ol/control";
+import {legendData} from "./legend";
 
 const viewStartingPos = [1409646.026322705, 5394869.494452778]; //Starting position of the view.
 
@@ -72,18 +74,34 @@ const pointOfInterestLayerGroup = new LayerGroup(
        layers: [foodAndSleepLayer, infoAndSafetyLayer]
     });
 
+//Legend init.
+const legend = new Control(
+    {
+        element: document.getElementById("map-legend"),
+    });
+
+var legendHTML = "";
+const legendContainer = document.getElementById("map-legend-container");
+legendData.forEach((entry, index) =>
+{
+    legendContainer.innerHTML += "<img class=\"icon-legend\" src=\"webgis/icons/" + entry.img + "\" width=\"24\" height=\"24\"> " + entry.name + "<br>"
+});
+
 //Create map with the layers.
 const map = new Map(
     {
-        target: 'webGIS',
+        target: 'webgis',
         layers: [new LayerGroup(
             {
                 title: "Livelli",
                 layers: [mapLayer, tracksLayer, sectionsLayer, pointOfInterestLayerGroup]
             })],
-        view: mapView
+        view: mapView,
     });
 
+map.addControl(legend)
+
+//TODO: Reimplement better layer switcher.
 //Add the layer switcher to the map.
 const layerSwitcher = new LayerSwitcher(
     {
@@ -119,6 +137,7 @@ map.on("click", event =>
 {
     console.log(map.getView().getCenter());
 });
+
 
 //Section popup init.
 const sectionsImgPath = "webgis/sections/{PATH}";
