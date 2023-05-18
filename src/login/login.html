@@ -2,116 +2,47 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Accedi o Registrati</title>
+  <title>Login form with JavaScript Validation</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'><link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
-
 <!-- partial:index.partial.html -->
-<nav class="main-nav">
-	<ul>
-		<li><a class="signin" href="#0">Accedi</a></li>
-		<li><a class="signup" href="#0">Registrati</a></li>
-	</ul>
-</nav>
 
-<div class="user-modal">
-		<div class="user-modal-container">
-			<ul class="switcher">
-				<li><a href="#0">Entra</a></li>
-				<li><a href="#0">Nuovo account</a></li>
-			</ul>
+<div class="wrapper">
+  <div class="inner-warpper text-center">
+    <h2 class="title">Login to your account</h2>
+    <form action="" id="formvalidate">
+      <div class="input-group">
+        <label class="palceholder" for="userName">User Name</label>
+        <input class="form-control" name="userName" id="userName" type="text" placeholder="" />
+        <span class="lighting"></span>
+      </div>
+      <div class="input-group">
+        <label class="palceholder" for="userPassword">Password</label>
+        <input class="form-control" name="userPassword" id="userPassword" type="password" placeholder="" />
+        <span class="lighting"></span>
+      </div>
 
-            <!-- LOGIN -->
-			<div id="login">
-				<form class="form">
-					<p class="fieldset">
-						<label class="image-replace email" for="signin-email">E-mail</label>
-						<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
-						<span class="error-message">Non esiste alcuna e-mail associata a questo account!</span>
-					</p>
-
-					<p class="fieldset">
-						<label class="image-replace password" for="signin-password">Password</label>
-						<input class="full-width has-padding has-border" id="signin-password" type="password"  placeholder="Password">
-						<a href="#0" class="hide-password">Vedi</a>
-						<span class="error-message">Password errata!</span>
-					</p>
-
-					<p class="fieldset">
-						<input type="checkbox" id="remember-me" checked>
-						<label for="remember-me">Ricordami</label>
-					</p>
-
-					<p class="fieldset">
-						<input class="full-width" type="submit" value="Login">
-					</p>
-				</form>
-				
-				<p class="form-bottom-message"><a href="#0">Hai dimenticato la password?</a></p>
-
-			</div>
-
-            <!-- REGISTRATI -->
-			<div id="signup">
-				<form class="form">
-					<p class="fieldset">
-						<label class="image-replace username" for="signup-username">Username</label>
-						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
-						<span class="error-message">Inserire solo lettere!</span>
-					</p>
-
-					<p class="fieldset">
-						<label class="image-replace email" for="signup-email">E-mail</label>
-						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
-						<span class="error-message">Inserisci un indirizzo e-mail valido</span>
-					</p>
-
-					<p class="fieldset">
-						<label class="image-replace password" for="signup-password">Password</label>
-						<input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password">
-						<a href="#0" class="hide-password">Vedi</a>
-						<span class="error-message">La password deve contenere almeno 6 caratteri!</span>
-					</p>
-
-					<p class="fieldset">
-						<input type="checkbox" id="accept-terms">
-						<label for="accept-terms">Accetto i <a class="accept-terms" href="#0">Termini</a></label>
-					</p>
-
-					<p class="fieldset">
-						<input class="full-width has-padding" type="submit" value="Create account">
-					</p>
-				</form>
-
-				<!-- <a href="#0" class="cd-close-form">Close</a> -->
-			</div>
-
-			<div id="reset-password">
-				<p class="form-message">Hai dimenticato la password? Introduci l'indirizzo e-mail</br>Riceverai un link per creare una nuova password</p>
-
-				<form class="form">
-					<p class="fieldset">
-						<label class="image-replace email" for="reset-email">E-mail</label>
-						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
-						<span class="error-message">Non esiste alcuna e-mail associata a questo account!</span>
-					</p>
-
-					<p class="fieldset">
-						<input class="full-width has-padding" type="submit" value="Reset password">
-					</p>
-				</form>
-
-				<p class="form-bottom-message"><a href="#0">Ritorna al login</a></p>
-			</div>
-			<a href="#0" class="close-form">Chiudi</a>
-		</div>
-	</div>
+      <button type="submit" id="login">Login</button>
+      <div class="clearfix supporter">
+        <div class="pull-left remember-me">
+          <input id="rememberMe" type="checkbox">
+          <label for="rememberMe">Remember Me</label>
+        </div>
+        <a class="forgot pull-right" href="#">Forgot Password?</a>
+      </div>
+    </form>
+  </div>
+  <div class="signup-wrapper text-center">
+    <a href="#">Don't have an accout? <span class="text-primary">Create One</span></a>
+  </div>
+</div>
 
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js'></script><script  src="./script.js"></script>
 
 </body>
 </html>
