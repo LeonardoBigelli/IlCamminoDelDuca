@@ -22,8 +22,8 @@ h1{
     width: auto;
 }
 
-.struttura_immagine1{
-    /*display: flex;*/
+.struttura_immagine{
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -91,14 +91,20 @@ h1{
     padding: 20px;
   }
 
-  #centered-block {
+#centered-block {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
   }
 
 .space-footer{
     height: 90px;
+}
+
+.space-footer1{
+    height: 50px;
 }
 
 #info {
