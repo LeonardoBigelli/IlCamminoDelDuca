@@ -103,7 +103,7 @@ nav ul ul li{
     position: relative;
     float: none;
     margin: 0px;
-    width: 250px;
+    width: 260px;
     display: list-item;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -325,6 +325,7 @@ img{
     margin-bottom: 35px;
     font-weight: 500;
     position: relative;
+    font-family: 'Wix Madefor Display' ,sans-serif;
 }
 
 .footer-col h4::before{

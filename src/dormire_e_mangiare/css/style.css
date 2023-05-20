@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap');
+
 html
 {
   -webkit-tap-highlight-color:transparent;
@@ -557,6 +559,85 @@ img{
     to{opacity: 1}
 }
 
+
+
+
+
+/*--------------- HOTEL ------------------*/
+.card-hotel-grid{
+    display: grid;
+    grid-template-columns: auto  ;
+    grid-row-gap: 30px;
+    width: 100%;
+    place-items: center;
+    margin-top: 15px;
+}
+
+.card-hotel-grid .card-hotel{
+    width: 280px;
+    border-radius: 10px;
+    background: #ececec;
+    box-shadow: 1px 2px 3px 0 rgba(0,0,0,.6);   
+}
+
+.card-hotel-grid .card-hotel .card-hotel-img{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.card-hotel-grid .card-hotel .card-hotel-img img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease-in-out;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-hotel-grid .card-hotel .card-body #title{
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px 5px;
+}
+
+.card-hotel-grid .card-hotel .card-body #more{
+    display: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+.card-hotel-grid .card-hotel.active .card-body #more{
+    display: block;
+}
+
+.card-hotel-grid .card-hotel .readmore{
+    color: #717171;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+.card-hotel-grid .card-hotel .readmore:hover{
+    cursor: pointer;
+    color: #292929;
+}
+
+.card-hotel-grid .card-hotel .readmore::before{
+    content: 'Più informazioni';
+}
+
+.card-hotel-grid .card-hotel.active .readmore::before{
+    content: 'Mostra meno';
+}
+
+
+/*.card-hotel-grid .card-hotel .card-hotel-img img:hover{
+    transform: scale(1.1);
+}*/
 
 
 

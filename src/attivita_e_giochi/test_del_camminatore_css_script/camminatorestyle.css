@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text&display=swap');
 
 *{
@@ -20,7 +20,7 @@ body{
 nav{
     /*background: #282828;*/
     background: #cccccc;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Nunito', sans-serif;
     width: 92%;
     margin: auto;
     border-radius: 0 0 10px 10px;
