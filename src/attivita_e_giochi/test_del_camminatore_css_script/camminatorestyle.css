@@ -4,7 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text&display=swap');
-
 *{
     margin: 0;
     padding: 0;
@@ -81,7 +80,7 @@ nav ul ul li{
     position: relative;
     float: none;
     margin: 0px;
-    width: 250px;
+    width: 260px;
     display: list-item;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }

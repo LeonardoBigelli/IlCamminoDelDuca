@@ -169,10 +169,10 @@ const questions = [
   {
     question: 'A che ora ti svegli la mattina?',
     answers: [
-      { text: '7', points: 4 },
-      { text: '8', points: 3 },
-      { text: '10', points: 2 },
-      { text: '12', points: 1 }
+      { text: '5', points: 4 },
+      { text: '6', points: 3 },
+      { text: '7', points: 2 },
+      { text: '8', points: 1 }
     ]
   },
   {
