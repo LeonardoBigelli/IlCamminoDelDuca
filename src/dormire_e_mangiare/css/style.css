@@ -41,7 +41,7 @@ body{
 nav{
     /*background: #282828;*/
     background: #cccccc;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Nunito', sans-serif;
     width: 92%;
     margin: auto;
     border-radius: 0 0 10px 10px;
@@ -102,7 +102,7 @@ nav ul ul li{
     position: relative;
     float: none;
     margin: 0px;
-    width: 250px;
+    width: 260px;
     display: list-item;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -564,30 +564,46 @@ img{
 
 
 /*--------------- HOTEL ------------------*/
-.card-hotel-grid{
+/*--- Se in una riga c'è una sola card, usa questa classe ---*/
+.card-hotel-grid-1{
     display: grid;
-    grid-template-columns: auto  ;
+    grid-template-columns: auto;
     grid-row-gap: 30px;
     width: 100%;
     place-items: center;
     margin-top: 15px;
+    align-items: start;
 }
 
-.card-hotel-grid .card-hotel{
+/*--- Se in una riga ci sono 3 o più cards, usa questa classe ---*/
+.card-hotel-grid-3{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-row-gap: 30px;
+    width: 100%;
+    place-items: center;
+    margin-top: 15px;
+    align-items: start;
+}
+
+/*--- Questo e' l'involucro esterno della card ---*/
+.card-hotel{
     width: 280px;
     border-radius: 10px;
     background: #ececec;
     box-shadow: 1px 2px 3px 0 rgba(0,0,0,.6);   
 }
 
-.card-hotel-grid .card-hotel .card-hotel-img{
+/*--- Questa e' la div contenente l'immagine nella card, non l'immagine ---*/
+.card-hotel-img{
     position: relative;
     width: 100%;
     height: 150px;
     overflow: hidden;
 }
 
-.card-hotel-grid .card-hotel .card-hotel-img img{
+/*--- Questa e' l'immagine ---*/
+.card-hotel-img img{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -596,46 +612,47 @@ img{
     border-radius: 10px 10px 0 0;
 }
 
-.card-hotel-grid .card-hotel .card-body #title{
+/*--- Questo e' il nome dell'albergo ---*/
+.card-body #title{
     font-family: 'Nunito', sans-serif;
     font-size: 18px;
     text-align: center;
     padding: 5px 5px;
 }
 
-.card-hotel-grid .card-hotel .card-body #more{
+.card-body #more{
     display: none;
     font-family: 'Nunito', sans-serif;
     font-size: 15px;
     text-align: center;
 }
 
-.card-hotel-grid .card-hotel.active .card-body #more{
+.card-hotel.active .card-body #more{
     display: block;
 }
 
-.card-hotel-grid .card-hotel .readmore{
+.card-hotel .readmore{
     color: #717171;
     font-family: 'Nunito', sans-serif;
     font-size: 15px;
     text-align: center;
 }
 
-.card-hotel-grid .card-hotel .readmore:hover{
+.card-hotel .readmore:hover{
     cursor: pointer;
     color: #292929;
 }
 
-.card-hotel-grid .card-hotel .readmore::before{
+.card-hotel .readmore::before{
     content: 'Più informazioni';
 }
 
-.card-hotel-grid .card-hotel.active .readmore::before{
+.card-hotel.active .readmore::before{
     content: 'Mostra meno';
 }
 
 
-/*.card-hotel-grid .card-hotel .card-hotel-img img:hover{
+/*.card-hotel .card-hotel-img img:hover{
     transform: scale(1.1);
 }*/
 
