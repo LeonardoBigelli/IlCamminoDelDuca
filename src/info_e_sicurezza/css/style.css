@@ -4,95 +4,32 @@
 	padding: 0; 
 }
 
-.image-container{
-    max-width: 80%;
-    position: relative;
-    margin: auto;
-    top: 10px;
-}
-
-.image-container img{
-    width: 100%;
-    height: 500px;
-}
-
-.hc{
+.hc0, .hc, .hc2, .hc3, .hc4{
     position: relative;
     width: 100%;
     right: 0;
-    margin-left: 185px;
     text-align: left;
     top: 40px;
 }
-
-.hc p{
+.hc0 p, .hc p, .hc2 p, .hc3 p, .hc4 p{
     font-size: 50px;
     color: black;
     font-family: 'sans-serif';
     text-decoration: underline;
     text-decoration-color:#cccccc;
+    margin-left: 80px;
 }
 
-#par1{
+#par0, #par1, #par2, #par3, #par4 {
     position: relative;
     width: 80%;
     right: 0;
-    margin-left: 185px;
     text-align: left;
     top: 40px;
+    margin-left: 80px;
 }
 
-.hc2{
-    position: relative;
-    width: 100%;
-    right: 0;
-    margin-left: 185px;
-    text-align: left;
-    top: 80px;
-}
 
-.hc2 p{
-    font-size: 50px;
-    color: black;
-    font-family: 'sans-serif';
-    text-decoration: underline;
-    text-decoration-color:#cccccc;
-}
-
-#par2{
-    position: relative;
-    width: 80%;
-    right: 0;
-    margin-left: 185px;
-    text-align: left;
-    top: 80px;
-}
-
-.hc3{
-    position: relative;
-    width: 100%;
-    right: 0;
-    margin-left: 185px;
-    text-align: left;
-    top: 80px;
-}
-
-.hc3 p{
-    font-size: 50px;
-    color: black;
-    font-family: 'sans-serif';
-    text-decoration: underline;
-    text-decoration-color:#cccccc;
-}
-
-#par3{
-    position: relative;
-    width: 80%;
-    right: 0;
-    margin-left: 185px;
-    text-align: left;
-    top: 80px;
-}
 
 
 
