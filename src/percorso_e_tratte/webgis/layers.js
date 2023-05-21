@@ -111,6 +111,31 @@ export const iconBackground = new RegularShape(
 		declutterMode: "obstacle"
 	});
 
+//Style used by layers.
+export function iconStyle(feature)
+{
+	const icon = feature.get("icona");
+
+	const style =
+		[
+			new Style(
+				{
+					image: iconBackground
+				}),
+			new Style(
+				{
+					image: new Icon(
+						{
+							src: iconPath + icon,
+							color: iconColor,
+							scale: 0.03,
+						})
+				})
+		];
+
+	return style;
+}
+
 //Food and sleep layer source from geoserver.
 const foodAndSleepSource = new VectorSource(
 	{
@@ -129,29 +154,7 @@ export const foodAndSleepLayer = new VectorLayer(
 	{
 		source: foodAndSleepSource,
 		title: "Mangiare e dormire",
-		style: function (feature)
-		{
-			const icon = feature.get("icona");
-
-			const style =
-				[
-					new Style(
-					{
-						image: iconBackground
-					}),
-					new Style(
-					{
-						image: new Icon(
-							{
-								src: iconPath + icon,
-								color: iconColor,
-								scale: 0.03,
-							})
-					})
-				];
-
-			return style;
-		}
+		style: iconStyle
 	});
 
 //Info and safety layer source from geoserver.
@@ -172,27 +175,5 @@ export const infoAndSafetyLayer = new VectorLayer(
 	{
 		source: infoAndSafetySource,
 		title: "Info e sicurezza",
-		style: function (feature)
-		{
-			const icon = feature.get("icona");
-
-			const style =
-				[
-					new Style(
-						{
-							image: iconBackground
-						}),
-					new Style(
-						{
-							image: new Icon(
-								{
-									src: iconPath + icon,
-									color: iconColor,
-									scale: 0.03
-								})
-						})
-				];
-
-			return style;
-		}
+		style: iconStyle
 	});

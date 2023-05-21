@@ -52,6 +52,34 @@
   padding-left: 10px;
 }
 
+.map-legend-main-entry
+{
+  list-style-type: none;
+  list-style-position: inside;
+}
+
+.map-legend-sub-entry
+{
+  padding-left: 15px;
+  list-style-type: none;
+  list-style-position: outside;
+}
+
+.map-legend-container input
+{
+  display: inline;
+  padding-right: 5px;
+}
+
+.map-legend-label
+{
+  display: inline;
+  font-size: 18px;
+  font-family: Calibri, serif;
+  font-weight: normal;
+  padding-left: 5px;
+}
+
 .icon-legend
 {
   filter: invert(100%);

@@ -8,20 +8,29 @@ import {click} from "ol/events/condition";
 import {
     foodAndSleepLayer,
     iconBackground,
-    iconColor, iconPath,
+    iconColor, iconPath, iconStyle,
     infoAndSafetyLayer,
     mapLayer,
     sectionsLayer,
     tracksLayer
 } from "./layers";
-import {Popover} from "bootstrap";
-import LayerSwitcher from "ol-layerswitcher";
 import LayerGroup from "ol/layer/Group";
 import {Icon, Stroke, Style} from "ol/style";
-import {Control, defaults} from "ol/control";
-import {legendData} from "./legend";
+import {foodAndDrinkCategories, infoAndSafetyCategories, legendData} from "./legend";
+import {LegendEntry, LegendEntryIcons, WebGISLegend} from "./WebGisLegend";
 
 const viewStartingPos = [1409646.026322705, 5394869.494452778]; //Starting position of the view.
+
+//Function that listens for loading events of the sources.
+async function waitSourcesLoading()
+{
+    const foodPromise = new Promise(resolve =>
+        foodAndSleepLayer.getSource().on("featuresloadend", resolve))
+    const infoPromise = new Promise(resolve =>
+        infoAndSafetyLayer.getSource().once("featuresloadend", resolve));
+
+    return Promise.all([foodPromise, infoPromise]);
+}
 
 //Function use to change the style of the selected section feature.
 function onSelectSectionStyle(feature)
@@ -32,7 +41,6 @@ function onSelectSectionStyle(feature)
     return style;
 }
 
-//TODO: Set correct style.
 //Function use to change the style of the selected poi feature.
 function onSelectPOInStyle(feature)
 {
@@ -58,6 +66,12 @@ function onSelectPOInStyle(feature)
     return style;
 }
 
+function setFeatureVisible(feature, show)
+{
+    feature.setStyle(show ? iconStyle : []);
+}
+
+
 //Extent:
 //[1397142.4969995867, 5362888.233718974, 1421189.678525492, 5425968.900521599]
 //Create starting view.
@@ -74,18 +88,6 @@ const pointOfInterestLayerGroup = new LayerGroup(
        layers: [foodAndSleepLayer, infoAndSafetyLayer]
     });
 
-//Legend init.
-const legend = new Control(
-    {
-        element: document.getElementById("map-legend"),
-    });
-
-var legendHTML = "";
-const legendContainer = document.getElementById("map-legend-container");
-legendData.forEach((entry, index) =>
-{
-    legendContainer.innerHTML += "<img class=\"icon-legend\" src=\"webgis/icons/" + entry.img + "\" width=\"24\" height=\"24\"> " + entry.name + "<br>"
-});
 
 //Create map with the layers.
 const map = new Map(
@@ -99,16 +101,16 @@ const map = new Map(
         view: mapView,
     });
 
-map.addControl(legend)
+//Legend init.
+const tracksLegendEntry = new LegendEntry(tracksLayer);
+const sectionsLegendEntry = new LegendEntry(sectionsLayer);
 
-//TODO: Reimplement better layer switcher.
-//Add the layer switcher to the map.
-const layerSwitcher = new LayerSwitcher(
+const legend = new WebGISLegend(
     {
-        reverse: false,
-        groupSelectStyle: 'group'
+        title: "Legenda",
+        entries: [tracksLegendEntry, sectionsLegendEntry]
     });
-map.addControl(layerSwitcher);
+map.addControl(legend)
 
 //Set the extent of the view based on trackLayer extent.
 tracksLayer.getSource().on("featuresloadend", params =>
@@ -131,6 +133,24 @@ tracksLayer.getSource().on("featuresloadend", params =>
             //extent: expandedExtent,
         }));
 });
+
+infoAndSafetyLayer.getSource().on("featuresloadend", () =>
+{
+    console.log("Info loaded");
+})
+
+/*foodAndSleepLayer.getSource().on("featuresloadend", params =>
+{
+    console.log("Food loaded");
+
+    const foodAndSleepLegendEntry = new LegendEntryIcons(foodAndSleepLayer, foodAndDrinkCategories, iconStyle, (category, feature) =>
+    {
+        return category.name === feature.get("tipo");
+    });
+
+    legend.addEntry(foodAndSleepLegendEntry);
+})*/
+
 
 //Debug
 map.on("click", event =>
@@ -261,10 +281,22 @@ selectPOIInteraction.on("select", event =>
     typeElement.innerText = poiType;
     siteContentElement.href = poiSite;
     phoneContentElement.innerText = poiPhone;
-    phoneElement.href = "tel:" + poiPhone;
+    phoneContentElement.href = "tel:" + poiPhone;
 
     typeElement.hidden = !poiType;
     siteElement.hidden = !poiSite;
     phoneElement.hidden = !poiPhone;
+});
 
+//Add the layers to the legend when they are all loaded.
+waitSourcesLoading().then(() =>
+{
+    const filter = (category, feature) =>
+        category.name === feature.get("tipo");
+
+    const foodAndSleepLegendEntry = new LegendEntryIcons(foodAndSleepLayer, foodAndDrinkCategories, iconStyle, filter);
+    const infoAndSafetyLegendEntry = new LegendEntryIcons(infoAndSafetyLayer, infoAndSafetyCategories, iconStyle, filter);
+
+    legend.addEntry(foodAndSleepLegendEntry);
+    legend.addEntry(infoAndSafetyLegendEntry);
 });
