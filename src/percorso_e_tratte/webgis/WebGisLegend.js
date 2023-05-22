@@ -1,12 +1,15 @@
 import {Control} from "ol/control";
 
+/**
+ * Control component used to display a legend inside the map.
+ */
 export class WebGISLegend extends Control
 {
 	constructor(opt_options)
 	{
 		const options = opt_options || {};
 
-		//Define html elements of the legend.
+		//Container of the legend.
 		const legendDiv = document.createElement("div");
 
 		super({
@@ -18,10 +21,12 @@ export class WebGISLegend extends Control
 		legendDiv.className = "map-legend";
 		this.legendDiv = legendDiv;
 
+		//Title of the legend.
 		this.legendHeader = document.createElement("h3");
 		this.legendHeader.className = "map-legend-header";
 		this.legendHeader.innerText = options.title;
 
+		//Main list of the legend.
 		this.legendContainer = document.createElement("ul");
 		this.legendContainer.id = "map-legend-container";
 		this.legendContainer.className = "map-legend-container";
@@ -31,19 +36,23 @@ export class WebGISLegend extends Control
 
 		this.entries = options.entries;
 
+		//Insert all the entries in the options.
 		const self = this;
 		this.entries.forEach(entry =>
-		{
-			self.addEntry(entry)
-
-		});
+			self.addEntry(entry));
 	}
 
+	/**
+	 * Insert the given entry into the legend.
+	 * @param legendEntry
+	 */
 	addEntry(legendEntry)
 	{
+		//Create list item.
 		const listEntryElement = document.createElement("li");
 		listEntryElement.className = "map-legend-main-entry";
 
+		//Add the elements of the entry.
 		legendEntry.createElements().forEach(element =>
 			listEntryElement.appendChild(element))
 
@@ -51,6 +60,9 @@ export class WebGISLegend extends Control
 	}
 }
 
+/**
+ * Represent an entry inside the legend.
+ */
 export class LegendEntry
 {
 	constructor(layer)
@@ -58,6 +70,10 @@ export class LegendEntry
 		this.layer = layer;
 	}
 
+	/**
+	 * Returns the array of element that make up the entry.
+	 * @returns {(HTMLInputElement|HTMLLabelElement)[]}
+	 */
 	createElements()
 	{
 		const self = this;
@@ -66,6 +82,7 @@ export class LegendEntry
 		this.input = document.createElement("input");
 		this.input.type = "checkbox";
 		this.input.checked = this.layer.getVisible();
+		this.input.className = "map-legend-checkbox";
 		this.input.onclick = ev =>
 			self.layer.setVisible(ev.target.checked);
 
@@ -78,31 +95,39 @@ export class LegendEntry
 	}
 }
 
+/**
+ * Represent an entry that owns other child entries inside the legend.
+ */
 export class LegendEntryIcons extends LegendEntry
 {
-	constructor(layer, categories, defaultStyle, filter)
+	constructor(layer, categories, filter)
 	{
 		super(layer);
-		//this.categories = categories;
-		this.defaultStyle = defaultStyle;
 		this.filter = filter;
 
 		this.collectFeatures(categories);
 	}
 
+	/**
+	 * Collect all the feature of the layer based on the entry filter.
+	 * @param categories
+	 */
 	collectFeatures(categories)
 	{
 		this.categories = [];
 
+		//Populate the list of category of the entry.
 		const self = this;
 		categories.forEach((category, index) =>
 		{
 			self.categories[index] = {};
 			self.categories[index].name = category.name;
 			self.categories[index].img = category.img;
+			self.categories[index].color = category.color;
 			self.categories[index].title = category.title;
 			self.categories[index].features = [];
 
+			//Add to the list all the features that match the filter.
 			self.layer.getSource().getFeatures().forEach(feature =>
 			{
 				if (self.filter(category, feature))
@@ -113,38 +138,82 @@ export class LegendEntryIcons extends LegendEntry
 
 	createElements()
 	{
+		//Get the base class elements.
 		const baseElements = super.createElements();
-		const listElement = document.createElement("ul");
 
+		//Label will be inserted inside a new element.
+		const label = baseElements.pop();
+
+		//Add the arrow to indicate a collapsible component.
+		const arrow = document.createElement("label");
+		arrow.innerHTML = "+"
+		arrow.className = "map-legend-collapsible-arrow";
+
+		//List of the sub elements.
+		const listElement = document.createElement("ul");
+		listElement.className = "map-legend-collapsible";
+
+		//Create the container of the label.
+		const container = document.createElement("span");
+		container.className = "hoverable";
+
+		//Open/close functionality.
+		container.onclick = ev =>
+		{
+			const collapsibleList = listElement;
+
+			if (collapsibleList.style.maxHeight)
+			{
+				collapsibleList.style.maxHeight = null;
+				arrow.innerHTML = "+";
+				return;
+			}
+
+			collapsibleList.style.maxHeight = collapsibleList.scrollHeight + "px";
+			arrow.innerHTML = "-";
+		}
+
+		container.appendChild(label);
+		container.appendChild(arrow);
+		baseElements.push(container);
+
+		//Add all sub entries to the list.
 		const self = this;
 		this.categories.forEach(category =>
 		{
+			//Main element of the sub entry.
 			const listEntryElement = document.createElement("li");
 			listEntryElement.className = "map-legend-sub-entry";
 
 			//Add the checkbox.
 			const input = document.createElement("input");
+			input.className = "map-legend-checkbox";
 			input.type = "checkbox";
 			input.checked = this.layer.getVisible();
 			input.onclick = ev =>
 				category.features.forEach(feature =>
-					feature.setStyle(ev.target.checked ? self.defaultStyle : []));
+					feature.setStyle(ev.target.checked ? null : []));
+			listEntryElement.appendChild(input);
 
 			//Add the icon.
-			//<img className=\"icon-legend\" src=\"webgis/icons/" + entry.img + "\" width=\"24\" height=\"24\"> " + entry.name + "<br>
-			const img = document.createElement("img");
-			img.className = "icon-legend";
-			img.width = 24;
-			img.height = 24;
-			img.src = "webgis/icons/" + category.img;
+			const img = document.createElement("span");
+			img.className = "map-legend-icon";
+			img.style.backgroundColor = "red"
+			if (category.img || category.color)
+			{
+				if (category.img)
+					img.style.maskImage = "url(webgis/icons/" + category.img + ")";
+				img.style.backgroundColor = category.color ? category.color : "#000";
+			}
+			else
+				img.style.width = "0px";
+
+			listEntryElement.appendChild(img);
 
 			//Add the label.
 			const label = document.createElement("label");
 			label.innerText = category.title;
 			label.className = "map-legend-label";
-
-			listEntryElement.appendChild(input);
-			listEntryElement.appendChild(img);
 			listEntryElement.appendChild(label);
 
 			listElement.appendChild(listEntryElement);

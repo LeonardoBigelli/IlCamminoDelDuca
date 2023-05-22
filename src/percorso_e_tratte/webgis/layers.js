@@ -51,18 +51,30 @@ const trackSource = new VectorSource(
 	})
 
 //Track layer.
+export const tracksColors = ["#448aff", "#1565c0", "#009688", "#8bc34a", "#ffc107", "#ff9800", "#f44336", "#ad1457"];
 export const tracksLayer = new VectorLayer(
 	{
 		source: trackSource,
 		title: "Percorso",
-		style: new Style(
-			{
-				stroke: new Stroke(
+		style: (feature) =>
+			[
+				new Style(
+				{
+					stroke: new Stroke(
+						{
+							color: "black",
+							width: 5.25,
+						}),
+				}),
+				new Style(
 					{
-						color: "#0A0AFFA0",
-						width: 5.25,
-					}),
-			}),
+						stroke: new Stroke(
+							{
+								color: tracksColors[feature.get("id")],
+								width: 4,
+							}),
+					})
+			]
 	});
 
 //Sections layer source from geoserver.

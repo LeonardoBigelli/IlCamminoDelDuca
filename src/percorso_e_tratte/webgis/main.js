@@ -16,7 +16,7 @@ import {
 } from "./layers";
 import LayerGroup from "ol/layer/Group";
 import {Icon, Stroke, Style} from "ol/style";
-import {foodAndDrinkCategories, infoAndSafetyCategories, legendData} from "./legend";
+import {foodAndDrinkCategories, infoAndSafetyCategories, sectionsCategories, tracksCategories} from "./legend";
 import {LegendEntry, LegendEntryIcons, WebGISLegend} from "./WebGisLegend";
 
 const viewStartingPos = [1409646.026322705, 5394869.494452778]; //Starting position of the view.
@@ -24,12 +24,14 @@ const viewStartingPos = [1409646.026322705, 5394869.494452778]; //Starting posit
 //Function that listens for loading events of the sources.
 async function waitSourcesLoading()
 {
+    const tracksPromise = new Promise(resolve =>
+        tracksLayer.getSource().on("featuresloadend", resolve))
     const foodPromise = new Promise(resolve =>
         foodAndSleepLayer.getSource().on("featuresloadend", resolve))
     const infoPromise = new Promise(resolve =>
         infoAndSafetyLayer.getSource().once("featuresloadend", resolve));
 
-    return Promise.all([foodPromise, infoPromise]);
+    return Promise.all([tracksPromise, foodPromise, infoPromise]);
 }
 
 //Function use to change the style of the selected section feature.
@@ -102,13 +104,13 @@ const map = new Map(
     });
 
 //Legend init.
-const tracksLegendEntry = new LegendEntry(tracksLayer);
-const sectionsLegendEntry = new LegendEntry(sectionsLayer);
+//const tracksLegendEntry = new LegendEntry(tracksLayer);
+//const sectionsLegendEntry = new LegendEntry(sectionsLayer);
 
 const legend = new WebGISLegend(
     {
         title: "Legenda",
-        entries: [tracksLegendEntry, sectionsLegendEntry]
+        entries: []
     });
 map.addControl(legend)
 
@@ -134,10 +136,10 @@ tracksLayer.getSource().on("featuresloadend", params =>
         }));
 });
 
-infoAndSafetyLayer.getSource().on("featuresloadend", () =>
+/*infoAndSafetyLayer.getSource().on("featuresloadend", () =>
 {
     console.log("Info loaded");
-})
+})*/
 
 /*foodAndSleepLayer.getSource().on("featuresloadend", params =>
 {
@@ -153,10 +155,10 @@ infoAndSafetyLayer.getSource().on("featuresloadend", () =>
 
 
 //Debug
-map.on("click", event =>
+/*map.on("click", event =>
 {
     console.log(map.getView().getCenter());
-});
+});*/
 
 
 //Section popup init.
@@ -291,12 +293,19 @@ selectPOIInteraction.on("select", event =>
 //Add the layers to the legend when they are all loaded.
 waitSourcesLoading().then(() =>
 {
-    const filter = (category, feature) =>
-        category.name === feature.get("tipo");
+    const iconFilter = (category, feature) =>
+        category.id === feature.get("tipo");
 
-    const foodAndSleepLegendEntry = new LegendEntryIcons(foodAndSleepLayer, foodAndDrinkCategories, iconStyle, filter);
-    const infoAndSafetyLegendEntry = new LegendEntryIcons(infoAndSafetyLayer, infoAndSafetyCategories, iconStyle, filter);
+    const tracksFilter = (category, feature) =>
+        category.id === feature.get("id");
 
+    const tracksLegendEntry = new LegendEntryIcons(tracksLayer, tracksCategories, tracksFilter);
+    const sectionsLegendEntry = new LegendEntryIcons(sectionsLayer, sectionsCategories, tracksFilter);
+    const foodAndSleepLegendEntry = new LegendEntryIcons(foodAndSleepLayer, foodAndDrinkCategories, iconFilter);
+    const infoAndSafetyLegendEntry = new LegendEntryIcons(infoAndSafetyLayer, infoAndSafetyCategories, iconFilter);
+
+    legend.addEntry(tracksLegendEntry);
+    legend.addEntry(sectionsLegendEntry);
     legend.addEntry(foodAndSleepLegendEntry);
     legend.addEntry(infoAndSafetyLegendEntry);
 });
