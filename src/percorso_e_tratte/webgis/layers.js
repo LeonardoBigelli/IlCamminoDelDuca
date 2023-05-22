@@ -127,12 +127,26 @@ export const iconBackground = new RegularShape(
 export function iconStyle(feature)
 {
 	const icon = feature.get("icona");
+	const featureColor = feature.get("colore")
+	const iconColor = featureColor ? "#" + featureColor : "#000";
 
 	const style =
 		[
 			new Style(
 				{
-					image: iconBackground
+					image: new RegularShape(
+						{
+							fill: new Fill({color: backgroundColor}),
+							stroke: new Stroke(
+								{
+									color: iconColor,
+									width: 2
+								}),
+							points: 16,
+							radius: 13,
+							rotation: 3.14 / 4,
+							declutterMode: "obstacle"
+						}),
 				}),
 			new Style(
 				{

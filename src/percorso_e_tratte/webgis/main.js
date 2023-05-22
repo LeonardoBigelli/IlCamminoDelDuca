@@ -6,6 +6,7 @@ import {Map, Overlay, View} from 'ol';
 import {Select} from "ol/interaction";
 import {click} from "ol/events/condition";
 import {
+    backgroundColor,
     foodAndSleepLayer,
     iconBackground,
     iconColor, iconPath, iconStyle,
@@ -15,7 +16,7 @@ import {
     tracksLayer
 } from "./layers";
 import LayerGroup from "ol/layer/Group";
-import {Icon, Stroke, Style} from "ol/style";
+import {Fill, Icon, RegularShape, Stroke, Style} from "ol/style";
 import {foodAndDrinkCategories, infoAndSafetyCategories, sectionsCategories, tracksCategories} from "./legend";
 import {LegendEntry, LegendEntryIcons, WebGISLegend} from "./WebGisLegend";
 
@@ -47,24 +48,38 @@ function onSelectSectionStyle(feature)
 function onSelectPOInStyle(feature)
 {
     const icon = feature.get("icona");
-    const color = "#ff0000";
+    const featureColor = feature.get("colore")
+    const iconColor = featureColor ? "#" + featureColor : "#000";
 
     const style =
         [
             new Style(
                 {
-                    image: iconBackground
+                    image: new RegularShape(
+                        {
+                            fill: new Fill({color: "#fffa85"}),
+                            stroke: new Stroke(
+                                {
+                                    color: iconColor,
+                                    width: 2
+                                }),
+                            points: 16,
+                            radius: 13,
+                            rotation: 3.14 / 4,
+                            declutterMode: "obstacle"
+                        }),
                 }),
             new Style(
                 {
                     image: new Icon(
                         {
                             src: iconPath + icon,
-                            color: color,
+                            color: iconColor,
                             scale: 0.03,
                         })
                 })
         ];
+
     return style;
 }
 
