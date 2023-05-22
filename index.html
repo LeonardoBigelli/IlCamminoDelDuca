@@ -115,20 +115,25 @@
                 <a href="#">Info e sicurezza</a>
                 <input type="checkbox" id="btn-6">
                 <ul>
-                    <li><a href="src/info_e_sicurezza/info.html">Numeri di emergenza</a></li>
-                    <li><a href="src/info_e_sicurezza/sicurezza.html">Primo e pronto soccorso</a></li>
-                    <li><a href="#">Guardie mediche</a></li>
-                    <li><a href="#">Farmacie</a></li>
-                    <li><a href="#">Pro loco</a></li>
-                    <li><a href="#">IAT</a></li>
+                    <li><a href="src/info_e_sicurezza/info.html">Centri informazioni</a></li>
+                    <li><a href="src/info_e_sicurezza/sicurezza.html">Sicurezza e soccorsi</a></li>
                 </ul>
             </li>
 
             <!-- Traduzione e login -->
             <li class="lang-log">
-                <a href="#"><ion-icon name="language-outline"></ion-icon></a>
-                <a href="#"><ion-icon name="person-outline"></ion-icon></a>
+                <a href="#"><ion-icon name="language-outline" id="lang"></ion-icon></a>
+                <ul id="languages">
+                    <li><a href="#">Italiano</a></li>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Español</a></li>
+                </ul>
             </li>
+
+            <li class="lang-log">
+                <a href="#"><ion-icon name="person-outline" id="log"></ion-icon></a>
+            </li>
+
         </ul>
     </nav>
 
@@ -403,6 +408,10 @@
         }
 
         window.addEventListener("scroll", reveal);
+
+        document.getElementById('lang').addEventListener('click', function(){
+            document.getElementById('languages').style.display = "block";
+        })
     </script>
 
 </body>

@@ -256,6 +256,19 @@ img{
     top: 0;
 }
 
+/*far aggiungere questo*/
+#languages li{
+    width: 80px;
+}
+
+#languages li a{
+    line-height: 30px;
+}
+
+#languages li a:hover{
+    color: #fff;
+}
+
 /*.dot{
     cursor: pointer;
     height: 15px;
