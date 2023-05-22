@@ -27,12 +27,14 @@ async function waitSourcesLoading()
 {
     const tracksPromise = new Promise(resolve =>
         tracksLayer.getSource().on("featuresloadend", resolve))
+    const sectionsPromise = new Promise(resolve =>
+        sectionsLayer.getSource().on("featuresloadend", resolve))
     const foodPromise = new Promise(resolve =>
         foodAndSleepLayer.getSource().on("featuresloadend", resolve))
     const infoPromise = new Promise(resolve =>
         infoAndSafetyLayer.getSource().once("featuresloadend", resolve));
 
-    return Promise.all([tracksPromise, foodPromise, infoPromise]);
+    return Promise.all([tracksPromise, sectionsPromise, foodPromise, infoPromise]);
 }
 
 //Function use to change the style of the selected section feature.
