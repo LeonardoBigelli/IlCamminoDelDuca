@@ -7,14 +7,7 @@ import VectorLayer from "ol/layer/Vector";
 import {Circle, Fill, Icon, RegularShape, Stroke, Style} from "ol/style";
 
 //Request url for geoserver layers.
-const geoserverUrl = "http://192.168.1.239:8080" //TODO: Switch with real url.
-const geoserverRequestUrl =	geoserverUrl + "/geoserver/cammino-urbinogubbio/wfs?service=WFS" +
-	"&version=1.3.0" +
-	"&request=GetFeature" +
-	"&outputFormat=application/json" +
-	"&srsname=EPSG:4326" +
-	"&typename=cammino-urbinogubbio:{LAYER_NAME}" +
-	"&bbox={BBOX},EPSG:4326";
+const geoJSONFolder = "webgis/data/";
 
 //Init GeoJson format.
 const geoJson = new GeoJSON(
@@ -41,12 +34,7 @@ export const mapLayer = new TileLayer(mapLayerParam);
 const trackSource = new VectorSource(
 	{
 		format: geoJson,
-		url: function (extent,)
-		{
-			return geoserverRequestUrl
-				.replace("{LAYER_NAME}", "tracks")
-				.replace("{BBOX}", extent.join(","));
-		},
+		url: geoJSONFolder + "tracks.geojson",
 		strategy: allStrategy
 	})
 
@@ -55,7 +43,7 @@ export const tracksColors = ["#448aff", "#1565c0", "#009688", "#8bc34a", "#ffc10
 export const tracksLayer = new VectorLayer(
 	{
 		source: trackSource,
-		title: "Percorso",
+		title: "Tratte",
 		style: (feature) =>
 			[
 				new Style(
@@ -81,12 +69,7 @@ export const tracksLayer = new VectorLayer(
 const sectionsSource = new VectorSource(
 	{
 		format: geoJson,
-		url: function (extent)
-		{
-			return geoserverRequestUrl
-				.replace("{LAYER_NAME}", "sections")
-				.replace("{BBOX}", extent.join(","));
-		},
+		url: geoJSONFolder + "sezioni_geologiche.geojson",
 		strategy: allStrategy
 	})
 
@@ -166,12 +149,7 @@ export function iconStyle(feature)
 const foodAndSleepSource = new VectorSource(
 	{
 		format: geoJson,
-		url: function (extent)
-		{
-			return geoserverRequestUrl
-				.replace("{LAYER_NAME}", "food_sleep")
-				.replace("{BBOX}", extent.join(","));
-		},
+		url: geoJSONFolder + "mangiare_e_dormire.geojson",
 		strategy: allStrategy
 	})
 
@@ -187,12 +165,7 @@ export const foodAndSleepLayer = new VectorLayer(
 const infoAndSafetySource = new VectorSource(
 	{
 		format: geoJson,
-		url: function (extent)
-		{
-			return geoserverRequestUrl
-				.replace("{LAYER_NAME}", "info_safety")
-				.replace("{BBOX}", extent.join(","));
-		},
+		url: geoJSONFolder + "info_e_sicurezza.geojson",
 		strategy: allStrategy
 	})
 

@@ -6,10 +6,8 @@ import {Map, Overlay, View} from 'ol';
 import {Select} from "ol/interaction";
 import {click} from "ol/events/condition";
 import {
-    backgroundColor,
     foodAndSleepLayer,
-    iconBackground,
-    iconColor, iconPath, iconStyle,
+    iconPath, iconStyle,
     infoAndSafetyLayer,
     mapLayer,
     sectionsLayer,
@@ -18,7 +16,7 @@ import {
 import LayerGroup from "ol/layer/Group";
 import {Fill, Icon, RegularShape, Stroke, Style} from "ol/style";
 import {foodAndDrinkCategories, infoAndSafetyCategories, sectionsCategories, tracksCategories} from "./legend";
-import {LegendEntry, LegendEntryIcons, WebGISLegend} from "./WebGisLegend";
+import {LegendEntryIcons, WebGISLegend} from "./WebGisLegend";
 
 const viewStartingPos = [1409646.026322705, 5394869.494452778]; //Starting position of the view.
 
@@ -121,9 +119,6 @@ const map = new Map(
     });
 
 //Legend init.
-//const tracksLegendEntry = new LegendEntry(tracksLayer);
-//const sectionsLegendEntry = new LegendEntry(sectionsLayer);
-
 const legend = new WebGISLegend(
     {
         title: "Legenda",
@@ -152,31 +147,6 @@ tracksLayer.getSource().on("featuresloadend", params =>
             //extent: expandedExtent,
         }));
 });
-
-/*infoAndSafetyLayer.getSource().on("featuresloadend", () =>
-{
-    console.log("Info loaded");
-})*/
-
-/*foodAndSleepLayer.getSource().on("featuresloadend", params =>
-{
-    console.log("Food loaded");
-
-    const foodAndSleepLegendEntry = new LegendEntryIcons(foodAndSleepLayer, foodAndDrinkCategories, iconStyle, (category, feature) =>
-    {
-        return category.name === feature.get("tipo");
-    });
-
-    legend.addEntry(foodAndSleepLegendEntry);
-})*/
-
-
-//Debug
-/*map.on("click", event =>
-{
-    console.log(map.getView().getCenter());
-});*/
-
 
 //Section popup init.
 const sectionsImgPath = "webgis/sections/{PATH}";
@@ -328,4 +298,6 @@ waitSourcesLoading().then(() =>
     legend.addEntry(sectionsLegendEntry);
     legend.addEntry(foodAndSleepLegendEntry);
     legend.addEntry(infoAndSafetyLegendEntry);
+
+    console.log("Legenda caricata!");
 });
