@@ -575,6 +575,16 @@ img{
     align-items: start;
 }
 
+.card-hotel-grid-2{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 30px;
+    width: 100%;
+    place-items: center;
+    margin-top: 15px;
+    align-items: start;
+}
+
 /*--- Se in una riga ci sono 3 o più cards, usa questa classe ---*/
 .card-hotel-grid-3{
     display: grid;
@@ -621,7 +631,7 @@ img{
 }
 
 .card-body #more{
-    display: none;
+    display: none; 
     font-family: 'Nunito', sans-serif;
     font-size: 15px;
     text-align: center;
