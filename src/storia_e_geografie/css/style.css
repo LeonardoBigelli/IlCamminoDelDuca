@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap');
+
 html
 {
   -webkit-tap-highlight-color:transparent;
@@ -39,7 +42,7 @@ body{
 nav{
     /*background: #282828;*/
     background: #cccccc;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Nunito', sans-serif;
     width: 92%;
     margin: auto;
     border-radius: 0 0 10px 10px;
@@ -100,7 +103,7 @@ nav ul ul li{
     position: relative;
     float: none;
     margin: 0px;
-    width: 250px;
+    width: 260px;
     display: list-item;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -386,81 +389,71 @@ img{
 
 
 
-
-/*---- Corpo (NON FOOTER) ----*/
-.space-body{
-    height: 15px;
+/*---- Pagina GEOTRAIL ----*/
+.geotrail-content{
+    width: 80%;
+    margin: auto;
 }
 
-.footer{
+.geotrail-title{
+    font-family: 'Wix Madefor Display', sans-serif;
+    font-size: 28px;
     margin-top: 20px;
-    width: 100%;
+    font-weight: bold;
+    text-align: center;
 }
 
-.header__center {
-    font-size: 2rem;
-    display: grid;
-    grid-template-columns: 1fr max-content 1fr;
-    grid-column-gap: 1.2rem;
-    align-items: center;
-    
+.geotrail-subtitle{
+    font-family: 'Wix Madefor Display', sans-serif;
+    font-size: 22px;
+    margin-top: 40px;
+    font-weight: bold;
 }
 
-.header__center::before,
-.header__center::after {
-    content: "";
+.geotrail-bodytext{
+    margin-top: 10px;
+}
+
+.geotrail-bodytext p{
+    font-family: 'Lora', sans-serif;
+}
+
+.geotrail-bodytext ol, .geotrail-bodytext ul{
+    font-family: 'Lora', sans-serif;
+    list-style-position: inside;
     display: block;
-    height: 2px;
-    background-color: currentColor;
-    width: 70%;
+    padding: 3px 0 0 20px;
 }
 
-.header__center::before{
-    margin-left: 30%;
-}
-
-.grid{ 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-row-gap: 30px;
-    width: 100%;
-    place-items: center;
-}
-
-.grid-item{
-    width: 100%;
-    text-align: center;
-}
-
-.grid img{
-    width: auto;
-    max-height: 114px;
-}
-
-.grid-item .logotext{
-    font-size: 20px;
-    text-align: center;
-}
-
-.space-footer{
-    height: 90px;
-}
-
-.grid-pl{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-row-gap: 30px;
-    width: 100%;
-    place-items: center;
-}
-
-.grid-pl .logocomune img{
-    width: auto;
-    max-height: 150px;
+.geotrail-bodytext ul li{
+    margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.geotrail-bodytext img{
+    width: 85%;
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px 0 rgba(0,0,0,.8);
+}
+
+.geotrail-bodytext .didascalia{
+    font-size: 15px;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#fig2{
+    /*width: 400px;
+    height: 300px;*/
+    width: 100%;
+}
+
+
 
 
 
