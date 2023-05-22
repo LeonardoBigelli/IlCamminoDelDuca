@@ -17,8 +17,14 @@ export class WebGISLegend extends Control
 			target: options.target,
 		});
 
+		const self = this;
+
 		legendDiv.id = "map-legend";
 		legendDiv.className = "map-legend";
+
+		if (checkMobile())
+			legendDiv.classList.add("mobile");
+
 		this.legendDiv = legendDiv;
 
 		//Title of the legend.
@@ -31,13 +37,25 @@ export class WebGISLegend extends Control
 		this.legendContainer.id = "map-legend-container";
 		this.legendContainer.className = "map-legend-container";
 
+		if (checkMobile())
+		{
+			this.legendContainer.classList.add("mobile");
+			this.legendHeader.classList.add("mobile");
+			this.legendHeader.classList.add("mobile");
+
+			this.legendHeader.onclick = ev =>
+			{
+				const containerStyle = self.legendContainer.style;
+				containerStyle.display = containerStyle.display === "block" ? "none" : "block";
+			}
+		}
+
 		this.legendDiv.appendChild(this.legendHeader);
 		this.legendDiv.appendChild(this.legendContainer)
 
 		this.entries = options.entries;
 
 		//Insert all the entries in the options.
-		const self = this;
 		this.entries.forEach(entry =>
 			self.addEntry(entry));
 	}
@@ -90,6 +108,9 @@ export class LegendEntry
 		this.label = document.createElement("label");
 		this.label.innerText = this.layer.get("title");
 		this.label.className = "map-legend-label";
+
+		if (checkMobile())
+			this.label.classList.add("mobile");
 
 		return [this.input, this.label];
 	}
@@ -199,6 +220,10 @@ export class LegendEntryIcons extends LegendEntry
 			const img = document.createElement("span");
 			img.className = "map-legend-icon";
 			img.style.backgroundColor = "red"
+
+			if (checkMobile())
+				img.classList.add("mobile");
+
 			if (category.img || category.color)
 			{
 				if (category.img)
@@ -214,6 +239,8 @@ export class LegendEntryIcons extends LegendEntry
 			const label = document.createElement("label");
 			label.innerText = category.title;
 			label.className = "map-legend-label";
+			if (checkMobile())
+				label.classList.add("mobile");
 			listEntryElement.appendChild(label);
 
 			listElement.appendChild(listEntryElement);
@@ -224,3 +251,13 @@ export class LegendEntryIcons extends LegendEntry
 	}
 }
 
+function checkMobile()
+{
+	return !!(navigator.userAgent.match(/Android/i)
+		|| navigator.userAgent.match(/webOS/i)
+		|| navigator.userAgent.match(/iPhone/i)
+		|| navigator.userAgent.match(/iPad/i)
+		|| navigator.userAgent.match(/iPod/i)
+		|| navigator.userAgent.match(/BlackBerry/i)
+		|| navigator.userAgent.match(/Windows Phone/i));
+}

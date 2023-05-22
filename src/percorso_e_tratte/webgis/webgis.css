@@ -25,7 +25,7 @@
   top: 65px;
   left: .5em;
   width: fit-content;
-  height: max-content;
+  height: fit-content;
   background-color: white;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   padding: 15px;
@@ -33,8 +33,19 @@
   border: 1px solid #cccccc;
   position: absolute;
   font-family: Calibri, serif;
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: auto;
+  white-space: nowrap;
+  /*min-width: 40vw;*/
   max-height: 75%;
+  max-width: 95%;
+  display: block !important;
+}
+
+.map-legend.mobile
+{
+  top: 80px;
+  left: .5em;
 }
 
 .map-legend:after, .map-legend:before
@@ -48,10 +59,21 @@
   position: absolute;
 }
 
+.map-legend-header.mobile
+{
+  font-size: 15px;
+}
+
 .map-legend-container
 {
   padding-top: 10px;
   padding-left: 10px;
+  display: block;
+}
+
+.map-legend-container.mobile
+{
+  display: none;
 }
 
 .map-legend-container input
@@ -76,6 +98,7 @@
 {
   overflow: hidden;
   max-height: 0;
+  max-width: max-content;
   transition: max-height 0.2s ease-out;
   display: block;
 }
@@ -108,6 +131,11 @@
   font-weight: normal;
 }
 
+.map-legend-label.mobile
+{
+  font-size: small;
+}
+
 .map-legend-checkbox
 {
   margin-right: 5px;
@@ -123,6 +151,13 @@
   /*margin: 4px;*/
   margin-right: 4px;
   vertical-align: middle;
+}
+
+.map-legend-icon.mobile
+{
+  mask-size: 16px;
+  height: 12px;
+  width: 12px;
 }
 
 /*.map-legend-color*/
