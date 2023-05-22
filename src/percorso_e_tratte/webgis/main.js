@@ -211,8 +211,11 @@ selectSectionsInteraction.on("select", event =>
     const feature = event.selected[0];
     const pngPath = feature.get("path_img");
 
-    //Set the image of the popup.
     let imgElement = document.getElementById("section-img");
+    let titleElement = document.getElementById("section-title");
+
+    //Set the image and title of the popup.
+    titleElement.innerText = feature.get("nome");
     imgElement.setAttribute("src", sectionsImgPath.replace("{PATH}", pngPath));
 });
 
