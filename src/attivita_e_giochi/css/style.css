@@ -88,6 +88,8 @@ h1{
     border: 1px solid #ccc;
     padding: 20px;
     font-family: 'Lora';
+    justify-content: center;
+    align-items: center;
   }
 
 #content {
