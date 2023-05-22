@@ -75,8 +75,8 @@ h1{
 }
 
 .img1{
-    width:40%; /* or whatever width you want. */
-    height:70%; /* or whatever width you want. */
+    width:30%; /* or whatever width you want. */
+    height:60%; /* or whatever width you want. */
 }
 
 .img2{
@@ -85,11 +85,8 @@ h1{
 }
 
 .section {
-    border: 1px solid #ccc;
-    padding: 20px;
+    padding: 70px 0;
     font-family: 'Lora';
-    justify-content: center;
-    align-items: center;
   }
 
 #content {
@@ -104,7 +101,6 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
     padding: 20px;
     font-family: 'Lora';
   }
