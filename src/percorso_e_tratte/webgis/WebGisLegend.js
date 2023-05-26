@@ -1,5 +1,3 @@
-//import {Control} from "ol/control";
-
 import {Control} from "./ol/control";
 
 /**

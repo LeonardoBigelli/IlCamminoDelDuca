@@ -1,10 +1,5 @@
- import './webgis.css';
-// import "ol/ol.css"
-// import 'ol-popup/src/ol-popup.css';
-// import "ol-layerswitcher/dist/ol-layerswitcher.css"
-// import {Map, Overlay, View} from 'ol';
-// import {Select} from "ol/interaction";
-// import {click} from "ol/events/condition";
+import "./ol/ol.css";
+import "./webgis.css";
 import {
     foodAndSleepLayer,
     iconPath, iconStyle,
@@ -13,8 +8,6 @@ import {
     sectionsLayer,
     tracksLayer
 } from "./layers";
-// import LayerGroup from "ol/layer/Group";
-// import {Fill, Icon, RegularShape, Stroke, Style} from "ol/style";
 import {foodAndDrinkCategories, infoAndSafetyCategories, sectionsCategories, tracksCategories} from "./legend";
 import {LegendEntryIcons, WebGISLegend} from "./WebGisLegend";
 import {Fill, Icon, RegularShape, Stroke, Style} from "./ol/style";
