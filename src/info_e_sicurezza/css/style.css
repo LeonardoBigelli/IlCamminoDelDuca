@@ -7,6 +7,7 @@
 .hc0, .hc, .hc2, .hc3, .hc4{
     position: relative;
     width: 100%;
+    font-family: 'Nunito';
     right: 0;
     text-align: left;
     top: 40px;
@@ -14,7 +15,7 @@
 .hc0 p, .hc p, .hc2 p, .hc3 p, .hc4 p{
     font-size: 50px;
     color: black;
-    font-family: 'sans-serif';
+    font-family: 'Nunito';
     text-decoration: underline;
     text-decoration-color:#cccccc;
     margin-left: 80px;
@@ -27,8 +28,8 @@
     text-align: left;
     top: 40px;
     margin-left: 80px;
+    font-family: 'Nunito'
 }
-
 
 
 
