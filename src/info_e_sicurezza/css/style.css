@@ -31,7 +31,51 @@
     font-family: 'Nunito'
 }
 
+.card-hotel-grid-3{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-row-gap: 80px;
+    width: 100%;
+    place-items: center;
+    margin-top: 15px;
+    align-items: start;
+}
 
+.box-1{
+    box-sizing: content-box;
+    background: #E7E7E7;
+    border: 3px solid #005997;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 35px;
+    margin: 35px;
+    width: 400px;
+    height: auto;
+} 
+
+.box-1 p{
+    margin-left: 10px;
+    font-family: 'Nunito';
+}
+
+.hbox-1{
+    box-sizing: border-box;
+    max-width: 750px;
+    margin: auto;
+    padding: 0px 0px;
+    background: #005997;
+    border-bottom: 5px solid #FFDE00;
+    border-radius: 50px 50px 0px 0px;
+}
+
+h4 {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    margin: auto;
+    margin-left: 30px;
+    color: #FFFFFF;
+}
 
 
 
