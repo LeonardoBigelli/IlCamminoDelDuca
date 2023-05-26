@@ -1,12 +1,21 @@
-import OSM from "ol/source/OSM";
-import TileLayer from "ol/layer/Tile";
-import VectorSource from "ol/source/Vector";
-import {GeoJSON} from "ol/format";
-import {all as allStrategy} from "ol/loadingstrategy";
-import VectorLayer from "ol/layer/Vector";
-import {Circle, Fill, Icon, RegularShape, Stroke, Style} from "ol/style";
+// import OSM from "ol/source/OSM";
+// import TileLayer from "ol/layer/Tile";
+// import VectorSource from "ol/source/Vector";
+// import {GeoJSON} from "ol/format";
+// import {all as allStrategy} from "ol/loadingstrategy";
+// import VectorLayer from "ol/layer/Vector";
+// import {Circle, Fill, Icon, RegularShape, Stroke, Style} from "ol/style";
+
+import {all as allStrategy} from "./ol/loadingstrategy"
 
 //Request url for geoserver layers.
+import {GeoJSON} from "./ol/format";
+import {OSM} from "./ol/source";
+import TileLayer from "./ol/layer/Tile";
+import VectorSource from "./ol/source/Vector";
+import VectorLayer from "./ol/layer/Vector";
+import {Fill, Icon, RegularShape, Stroke, Style} from "./ol/style";
+
 const geoJSONFolder = "webgis/data/";
 
 //Init GeoJson format.

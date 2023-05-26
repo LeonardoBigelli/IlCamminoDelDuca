@@ -1,4 +1,6 @@
-import {Control} from "ol/control";
+//import {Control} from "ol/control";
+
+import {Control} from "./ol/control";
 
 /**
  * Control component used to display a legend inside the map.
