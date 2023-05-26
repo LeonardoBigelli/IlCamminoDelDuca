@@ -10,8 +10,8 @@ let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)  //al click del bottone start, invoca startgame
 nextButton.addEventListener('click', () => {    //al click di prossimo, passa alla domanda successiva
-  currentQuestionIndex++
-  setNextQuestion()
+  currentQuestionIndex++;
+  setNextQuestion();
 })
 
 
