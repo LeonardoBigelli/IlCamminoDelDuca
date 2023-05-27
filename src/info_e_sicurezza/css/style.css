@@ -13,11 +13,11 @@
     top: 40px;
 }
 .hc0 p, .hc p, .hc2 p, .hc3 p, .hc4 p{
-    font-size: 50px;
+    font-size: 40px;
     color: black;
     font-family: 'Nunito';
     text-decoration: underline;
-    text-decoration-color:#cccccc;
+    text-decoration-color: #a0a0a0;
     margin-left: 80px;
 }
 
@@ -34,6 +34,26 @@
 .card-hotel-grid-3{
     display: grid;
     grid-template-columns: auto auto auto;
+    grid-row-gap: 80px;
+    width: 100%;
+    place-items: center;
+    margin-top: 15px;
+    align-items: start;
+}
+
+.card-hotel-grid-2{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 80px;
+    width: 100%;
+    place-items: center;
+    margin-top: 15px;
+    align-items: start;
+}
+
+.card-hotel-grid-1{
+    display: grid;
+    grid-template-columns: auto;
     grid-row-gap: 80px;
     width: 100%;
     place-items: center;
