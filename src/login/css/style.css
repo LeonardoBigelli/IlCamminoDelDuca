@@ -55,9 +55,9 @@ input:-webkit-autofill {
 input[type="checkbox"] {
   width: auto;
 }
-button {
+button{
   cursor: pointer;
-  background: #314fb4;
+  background: #005997;
   width: 100%;
   border: 0;
   padding: 10px 15px;
