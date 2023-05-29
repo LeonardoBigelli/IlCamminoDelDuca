@@ -1,17 +1,19 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il cammino del Duca - Credenziale</title>
+    <title>Credenziale</title>
     
-    <!--Foglio di stile-->
-    <link rel="stylesheet" href="css/style.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="../../src/login/css/style.css">
+  
+    <!--Foglio di stile del menù -->
+    <link rel="stylesheet" href="../../css/style.css"> 
+  
     <!-- IonIcons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    
+        
+  
     </head>
 <body>
     <!-- Navbar -->
@@ -112,8 +114,8 @@
                 <a href="../info_e_sicurezza/info.html">Info e sicurezza</a>
                 <input type="checkbox" id="btn-6">
                 <ul>
-                    <li><a href="../info_e_sicurezza/info.html">Info</a></li>
-                    <li><a href="../info_e_sicurezza/sicurezza.html">Sicurezza</a></li>
+                    <li><a href="../info_e_sicurezza/info.html">Centri informazioni</a></li>
+                    <li><a href="../info_e_sicurezza/sicurezza.html">Sicurezza e soccorsi</a></li>
                 </ul>
             </li>
 
@@ -124,7 +126,33 @@
             </li>
         </ul>
     </nav>
-    <div style="font-size: xx-large; text-align: center;font-family: 'Wix Madefor Display', sans-serif;">
-        <p> Credenziale. </p>
-    </div>
+   
+    <div class="wrapper">
+        <!-- CONTENUTO -->
+        <div class="inner-warpper text-center">
+          <h2 class="title">Credenziale</h2><br>
+          <form action="" id="formvalidate">
+
+            <div class="input-group">
+              <label class="palceholder" for="userName">Nome</label>
+              <input class="form-control" name="userName" id="userName" type="text" placeholder="" />
+              <span class="lighting"></span>
+            </div>
+
+            <div class="input-group">
+                <label class="palceholder" for="userLastName">Cognome</label>
+                <input class="form-control" name="userLastName" id="userLastName" type="text" placeholder="" />
+                <span class="lighting"></span>
+              </div>
+
+            <div class="input-group">
+              <label class="palceholder" for="userPassword">Email</label>
+              <input class="form-control" name="userPassword" id="userPassword" type="password" placeholder="" />
+              <span class="lighting"></span>
+            </div>
+      
+            <button type="submit" id="login">Crea credenziale</button>
+          </form>
+        </div>
+      </div>
 </html>

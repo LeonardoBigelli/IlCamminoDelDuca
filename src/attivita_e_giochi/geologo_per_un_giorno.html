@@ -18,129 +18,130 @@
 
     <body>
         
-        <nav>
-            <!-- Logo -->
-            <!--<div class="logo">Urbino</div>-->
-            <div class="logo">
-                <a href="index.html"><img src="../../media/logo.png" alt=""></a>
-            </div>
-            <label for="btn" class="icon">
-                <span class="fa fa-bars"><ion-icon name="menu-outline"></ion-icon></span>
-            </label>
-            <input type="checkbox" id="btn">
-    
-            <!-- Inizio elenco -->
+        <!--Alert box-->
+        <script type="text/javascript">
+            alert("Attenzione: pagina web in costruzione...");
+        </script>    
+
+<nav>
+    <!-- Logo -->
+    <!--<div class="logo">Urbino</div>-->
+    <div class="logo">
+        <a href="index.html"><img src="../../media/logo.png" alt=""></a>
+    </div>
+    <label for="btn" class="icon">
+        <span class="fa fa-bars"><ion-icon name="menu-outline"></ion-icon></span>
+    </label>
+    <input type="checkbox" id="btn">
+
+    <!-- Inizio elenco -->
+    <ul>
+        <!-- 1 -->
+        <li>
+            <label for="btn-1" class="show">Percorso e tratte +</label>
+            <a href="#">Percorso e tratte</a>
+            <input type="checkbox" id="btn-1">
+            <!-- Sottoelenco 1 -->
             <ul>
-                <!-- 1 -->
-                <li>
-                    <label for="btn-1" class="show">Percorso e Tratte +</label>
-                    <a href="#">Percorso e Tratte</a>
-                    <input type="checkbox" id="btn-1">
-                    <!-- Sottoelenco 1 -->
-                    <ul>
-                        <li><a href="#">Itinerario (WebGIS)</a></li>
-                        <li><a href="#">Tratte (GPX)</a></li>
-                        <li><a href="#">Preparati al percorso</a></li>
-                        <li><a href="#">Segnaletica</a></li>
-                        <li><a href="#">Credenziale</a></li>
-                    </ul>
-                </li>
-    
-                <!-- 2 -->
-                <li>
-                    <label for="btn-2" class="show">Storia e geografia +</label>
-                    <a href="#">Storia e geografia</a>
-                    <input type="checkbox" id="btn-2">
-                    <ul>
-                        <li><a href="#">Geologia del cammino</a></li>
-                        <li><a href="#">La storia dell'uomo</a></li>
-                        <li><a href="#">Storie e geografie del Duca</a></li>
-                        <li><a href="#">Geografia della cucina locale</a></li>
-                        <li><a href="#">Vino o birra?</a></li>
-                        <li><a href="#">Tradizioni</a></li>
-                        <li><a href="#">Natura e ambiente</a></li>
-                    </ul> 
-                </li>
-    
-                <!-- 3 -->
-                <li>
-                    <label for="btn-3" class="show">Arrivare e muoversi +</label>
-                    <a href="#">Arrivare e muoversi</a>
-                    <input type="checkbox" id="btn-3">
-                    <ul>
-                        <li><a href="#">Arrivare ad Urbino</a></li>
-                        <li><a href="#">Arrivare a Gubbio</a></li>
-                        <li><a href="#">Collegamenti Gubbio - Urbino</a></li>
-                        <li><a href="#">Noleggi</a></li>
-                        <li><a href="#">Autolinee</a></li>
-                        <li><a href="#">Taxi</a></li>
-                    </ul>
-                </li>
-    
-                <!-- 4 -->
-                <li>
-                    <label for="btn-4" class="show">Dormire e mangiare +</label>
-                    <a href="#">Dormire e mangiare</a>
-                    <input type="checkbox" id="btn-4">
-                    <ul>
-                        <li><a href="#">Hotel</a></li>
-                        <li><a href="#">B&B</a></li>
-                        <li><a href="#">Ostelli</a></li>
-                        <li><a href="#">Tende</a></li>
-                        <li><a href="#">Bar</a></li>
-                        <li><a href="#">Alimentari</a></li>
-                        <li><a href="#">Gastronomie</a></li>
-                        <li><a href="#">Osterie</a></li>
-                        <li><a href="#">Ristoranti</a></li>
-                        <li><a href="#">Pizzerie</a></li>
-                    </ul>
-                </li>
-    
-                <!-- 5 -->
-                <li>
-                    <label for="btn-5" class="show">Attività e giochi +</label>
-                    <a href="#">Attività e giochi</a>
-                    <input type="checkbox" id="btn-5">
-                    <ul>
-                        <li><a href="#">Test del camminatore</a></li>
-                        <li><a href="#">Contest fotografici</a></li>
-                        <li><a href="#">Viaggi di gruppo</a></li>
-                        <li><a href="#">Orientamento</a></li>
-                        <li><a href="#">Geologo per un giorno</a></li>
-                        <li><a href="#">Altre attività</a></li>
-                    </ul>
-                </li>
-    
-                <!-- 6 -->
-                <li>
-                    <label for="btn-6" class="show">Info e sicurezza +</label>
-                    <a href="../info_e_sicurezza/info.html">Info e sicurezza</a>
-                    <input type="checkbox" id="btn-6">
-                    <ul>
-                        <li><a href="../info_e_sicurezza/info.html">Info</a></li>
-                        <li><a href="../info_e_sicurezza/sicurezza.html">Sicurezza</a></li>
-                    </ul>
-                </li>
-    
-                <!--<li>
-                    <div class="others">
-                        <div class="languages">
-                            <a href="#"><ion-icon name="language-outline"></ion-icon></a>
-                        </div>
-                        <div class="login">
-                            <a href="#"><ion-icon name="person-outline"></ion-icon></a>
-                        </div>
-                    </div>
-                </li>-->
-    
-    
-                <!-- Traduzione e login -->
-                <li class="lang-log">
-                    <a href="#"><ion-icon name="language-outline"></ion-icon></a>
-                    <a href="#"><ion-icon name="person-outline"></ion-icon></a>
-                </li>
+                <li><a href="../../src/percorso_e_tratte/preparati_al_percorso.html">Preparati al Cammino</a></li>
+                <li><a href="https://5173-leonardobig-ilcamminode-lhoqdjvkcr0.ws-eu98.gitpod.io/IlCamminoDelDuca/src/percorso_e_tratte/itinerario.html">Itinerario (WebGIS)</a></li>
+                <li><a href="../../src/percorso_e_tratte/tratte.html">Tratte (GPX)</a></li>
+                <li><a href="../../src/percorso_e_tratte/segnaletica.html">Segnaletica</a></li>
+                <li><a href="../../src/percorso_e_tratte/credenziale.html">Credenziale</a></li>
             </ul>
-        </nav>
+        </li>
+
+        <!-- 2 -->
+        <li>
+            <label for="btn-2" class="show">Geografie e storie +</label>
+            <a href="#">Geografie e storie</a>
+            <input type="checkbox" id="btn-2">
+            <ul>
+                <li><a href="../../src/storia_e_geografie/geologia_del_cammino.html">Geologia del cammino</a></li>
+                <li><a href="../../src/storia_e_geografie/la_storia_dell_uomo.html">La storia dell'uomo</a></li>
+                <li><a href="../../src/storia_e_geografie/storie_e_geografie_del_duca.html">Storie e geografie del Duca</a></li>
+                <li><a href="../../src/storia_e_geografie/geografia_della_cucina_locale.html">Geografia della cucina locale</a></li>
+                <li><a href="../../src/storia_e_geografie/tradizioni.html">Tradizioni</a></li>
+                <li><a href="../../src/storia_e_geografie/natura_e_ambiente.html">Natura e ambiente</a></li>
+            </ul> 
+        </li>
+
+        <!-- 3 -->
+        <li>
+            <label for="btn-3" class="show">Arrivare e muoversi +</label>
+            <a href="#">Arrivare e muoversi</a>
+            <input type="checkbox" id="btn-3">
+            <ul>
+                <li><a href="../../src/arrivare_e_muoversi/arrivare_a_urbino.html">Arrivare ad Urbino</a></li>
+                <li><a href="../../src/arrivare_e_muoversi/arrivare_a_gubbio.html">Arrivare a Gubbio</a></li>
+                <li><a href="../../src/arrivare_e_muoversi/collegamenti_gubbio_urbino.html">Collegamenti Gubbio - Urbino</a></li>
+                <li><a href="../../src/arrivare_e_muoversi/noleggi.html">Noleggi</a></li>
+                <li><a href="../../src/arrivare_e_muoversi/autolinee_e_taxi.html">Autolinee</a></li>
+                <li><a href="../../src/arrivare_e_muoversi/autolinee_e_taxi.html">Taxi</a></li>
+            </ul>
+        </li>
+
+        <!-- 4 -->
+        <li>
+            <label for="btn-4" class="show">Dormire e mangiare +</label>
+            <a href="#">Dormire e mangiare</a>
+            <input type="checkbox" id="btn-4">
+            <ul>
+                <li><a href="../../src/dormire_e_mangiare/hotel.html">Hotel</a></li>
+                <li><a href="../../src/dormire_e_mangiare/b_and_b.html">B&B</a></li>
+                <li><a href="../../src/dormire_e_mangiare/ostelli.html">Ostelli</a></li>
+                <li><a href="../../src/dormire_e_mangiare/tende.html">Tende</a></li>
+                <li><a href="../../src/dormire_e_mangiare/bar.html">Bar</a></li>
+                <li><a href="../../src/dormire_e_mangiare/alimentari.html">Alimentari</a></li>
+                <li><a href="../../src/dormire_e_mangiare/gastronomie.html">Gastronomie</a></li>
+                <li><a href="../../src/dormire_e_mangiare/osterie.html">Osterie</a></li>
+                <li><a href="../../src/dormire_e_mangiare/ristoranti.html">Ristoranti</a></li>
+                <li><a href="../../src/dormire_e_mangiare/pizzerie.html">Pizzerie</a></li>
+            </ul>
+        </li>
+
+        <!-- 5 -->
+        <li>
+            <label for="btn-5" class="show">Attività e giochi +</label>
+            <a href="#">Attività e giochi</a>
+            <input type="checkbox" id="btn-5">
+            <ul>
+                <li><a href="../../src/attivita_e_giochi/test_del_camminatore.html">Test del camminatore</a></li>
+                <li><a href="../../src/attivita_e_giochi/contest_fotografici.html">Contest fotografici</a></li>
+                <li><a href="../../src/attivita_e_giochi/viaggi_di_gruppo.html">Viaggi di gruppo</a></li>
+                <li><a href="../../src/attivita_e_giochi/orientamento.html">Orientamento</a></li>
+                <li><a href="../../src/attivita_e_giochi/geologo_per_un_giorno.html">Geologo per un giorno</a></li>
+                <li><a href="../../src/attivita_e_giochi/altre_attivita.html">Altre attività</a></li>
+            </ul>
+        </li>
+
+        <!-- 6 -->
+        <li>
+            <label for="btn-6" class="show">Info e sicurezza +</label>
+            <a href="#">Info e sicurezza</a>
+            <input type="checkbox" id="btn-6">
+            <ul>
+                <li><a href="../../src/info_e_sicurezza/info.html">Centri informazioni</a></li>
+                <li><a href="../../src/info_e_sicurezza/sicurezza.html">Sicurezza e soccorsi</a></li>
+            </ul>
+        </li>
+
+        <!-- Traduzione e login -->
+        <li class="lang-log">
+            <a href="#"><ion-icon name="language-outline" id="lang"></ion-icon></a>
+            <ul id="languages">
+                <li><a href="#">Italiano</a></li>
+                <li><a href="#">English</a></li>
+                <li><a href="#">Español</a></li>
+            </ul>
+        </li>
+
+        <li class="lang-log">
+            <a href="#"><ion-icon name="person-outline" id="log"></ion-icon></a>
+        </li>
+
+    </ul>
+</nav>
 <!--
         <div id="struttura_principale">
             <h1>Geologo per un giorno</h1>
@@ -168,7 +169,8 @@
             </div>
         </div>-->
 
-        <!--test-->
+        <!--test, lora font per principali, per titoli: wixmadefordisplay, per navbar: nunito--> 
+        <h1>Geologo per un giorno</h1>
         <div id="content">
             <div class="section">
               <!-- Inserisci qui l'immagine per il primo riquadro in alto a sinistra -->
@@ -200,12 +202,12 @@
             </div>
           </div>
 
-          <div class="space-footer"></div>
+          <div class="space-footer1"></div>
 
           <!--Blocco con elenco puntato per gli strumenti forniti-->
+          <h2>Materiali forniti per l'attività:</h2>
           <div id="centered-block">
-            <ul>
-                <h2>Materiali forniti per l'attività:</h2>
+            <ul>   
               <li>Estratto dalla Carta Tecnica Regionale alla scala 1:10.000</li>
               <li>Bussola</li>
               <li>Lenti</li>

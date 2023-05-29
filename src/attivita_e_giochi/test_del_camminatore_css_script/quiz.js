@@ -10,8 +10,8 @@ let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)  //al click del bottone start, invoca startgame
 nextButton.addEventListener('click', () => {    //al click di prossimo, passa alla domanda successiva
-  currentQuestionIndex++
-  setNextQuestion()
+  currentQuestionIndex++;
+  setNextQuestion();
 })
 
 
@@ -126,7 +126,7 @@ function calcolaPunti(){
 
   document.getElementById("results").classList.remove('hide');
 
-  if (puntiTot < 5){
+  if (puntiTot < 7){
     // Recupera il tipo dal primo risultato
     const tipoPrimoRisultato = risultati[0].risultato[0].tipo;
     console.log(tipoPrimoRisultato); // Output: "Pigro"
@@ -135,7 +135,7 @@ function calcolaPunti(){
                                                     + "</p>";
   }
 
-  if(puntiTot >= 5 && puntiTot < 9){
+  if(puntiTot >= 7 && puntiTot < 11){
     // Recupera il tipo dal secondo risultato
     const tipoSecondoRisultato = risultati[1].risultato[0].tipo;
     console.log(tipoSecondoRisultato); // Output: "Medio"
@@ -144,7 +144,7 @@ function calcolaPunti(){
                                                     + "</p>";
   }
 
-  if(puntiTot >= 9 && puntiTot < 13){
+  if(puntiTot >= 11 && puntiTot < 14){
     // Recupera il tipo dal terzo risultato
     const tipoTerzoRisultato = risultati[2].risultato[0].tipo;
     console.log(tipoTerzoRisultato); // Output: "Medio"
@@ -153,7 +153,7 @@ function calcolaPunti(){
                                                     + "</p>";
   }
 
-  if(puntiTot >= 13 && puntiTot < 17){
+  if(puntiTot >= 14 && puntiTot < 18){
     // Recupera il tipo dal quarto risultato
     const tipoQuartoRisultato = risultati[3].risultato[0].tipo;
     console.log(tipoQuartoRisultato); // Output: "Iperattivo"
@@ -169,10 +169,10 @@ const questions = [
   {
     question: 'A che ora ti svegli la mattina?',
     answers: [
-      { text: '7', points: 4 },
-      { text: '8', points: 3 },
-      { text: '10', points: 2 },
-      { text: '12', points: 1 }
+      { text: '5', points: 4 },
+      { text: '6', points: 3 },
+      { text: '7', points: 2 },
+      { text: '8', points: 1 }
     ]
   },
   {

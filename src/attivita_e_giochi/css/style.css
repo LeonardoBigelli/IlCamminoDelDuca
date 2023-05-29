@@ -1,9 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Nunito:wght@300&display=swap');
 h1{
     /*text-align: center;*/
     display: flex;
     align-items: center;
     justify-content: center;
     font-size:6vw;
+    font-family: 'Wix Madefor Display';
+}
+
+h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .titolo{
@@ -22,8 +34,8 @@ h1{
     width: auto;
 }
 
-.struttura_immagine1{
-    /*display: flex;*/
+.struttura_immagine{
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -69,8 +81,8 @@ h1{
 }
 
 .img1{
-    width:40%; /* or whatever width you want. */
-    height:70%; /* or whatever width you want. */
+    width:30%; /* or whatever width you want. */
+    height:60%; /* or whatever width you want. */
 }
 
 .img2{
@@ -79,8 +91,8 @@ h1{
 }
 
 .section {
-    border: 1px solid #ccc;
-    padding: 20px;
+    padding: 70px 0;
+    font-family: 'Lora';
   }
 
 #content {
@@ -91,14 +103,20 @@ h1{
     padding: 20px;
   }
 
-  #centered-block {
+#centered-block {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    font-family: 'Lora';
   }
 
 .space-footer{
     height: 90px;
+}
+
+.space-footer1{
+    height: 50px;
 }
 
 #info {

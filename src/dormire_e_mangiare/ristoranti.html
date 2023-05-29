@@ -2,7 +2,7 @@
     <head>
         <title> Ristoranti </title>
 
-         <!--Foglio di stile-->
+    <!--Foglio di stile-->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- IonIcons -->
@@ -12,15 +12,31 @@
     </head>
 
     <style>
-        #container {
-            width: 50%;
-                box-shadow: 5px 5px 3px #a3a0a1;
-                background-color: #ffffff;
-                vertical-align: middle;
-                text-align: center;
-                border: 2px solid black;
+    h2 {
+        font-family: 'Wix Madefor Display', sans-serif;
+        margin-left: 50px;
+    }
+    #container-ex {
+        width: 90%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        text-align: center;
+        font-family: 'Wix Madefor Display', sans-serif;
+        position: relative;
+    }
     
-        }
+    a {
+        color: #434343;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color:#000000; 
+        text-decoration:none; 
+        cursor:pointer;  
+    }
 
     </style>
     <body>
@@ -150,110 +166,180 @@
                 </ul>
             </nav>
             <br>
-            <div>
-                <h2>Ristoranti presso Urbino-Fermignano</h2>
-                <div id="container">
-                    <a href="https://www.tripadvisor.it/Restaurant_Review-g187797-d2645633-Reviews-La_Terrazza_del_Duca-Urbino_Province_of_Pesaro_and_Urbino_Marche.html">
-                    <h3>La Terrazza del Duca Urbino</h3>
-                    </a>
-                    <img src="media/ristoranti/downloads.jpg" style="width: 50%">
-                    <p>Ristorante</p>
-                    <br>
-                    <p>Num. Telefono: 0722 2826</p>
+            <div class="container-ex">
+                <div>
+                    <h2><a id="hotel2">Ristoranti presso Urbino</a></h2>
+                    <div class="card-hotel-grid-1">
+                        <div class="card-hotel">
+                            <div class="card-hotel-img">
+                                <img src="media/ristoranti/downloads.jpg">
+                            </div>
+                            <div class="card-body">
+                                <p id="title"> La Terrazza del Duca Urbino</p>
+                                <div id="more">
+                                    <p>
+                                        Num. Telefono: 0722 2826
+                                    </p>
+                                    <a href="https://www.tripadvisor.it/Restaurant_Review-g187797-d2645633-Reviews-La_Terrazza_del_Duca-Urbino_Province_of_Pesaro_and_Urbino_Marche.html">Link</a>
+                                </div>
+                                <p class="readmore">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h2><a id="hotel2">Ristoranti presso Fermignano</a></h2>
+                    <div class="card-hotel-grid-3">
+                        <div class="card-hotel">
+                            <div class="card-hotel-img">
+                                <img src="media/ristoranti/2fa4b5ae-94d8-4aef-b6aa-b3e011d91390.avif">
+                            </div>
+                            <div class="card-body">
+                                <p id="title"> Burgheria Steakhouse "da Bindo"</p>
+                                <div id="more">
+                                    <p>
+                                        Num. Telefono: 0722 331407
+                                        <a href="https://www.tripadvisor.it/Restaurant_Review-g187797-d2645633-Reviews-La_Terrazza_del_Duca-Urbino_Province_of_Pesaro_and_Urbino_Marche.html"></a>
+                                    </p>
+                                </div>
+                                <p class="readmore">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-hotel">
+                            <div class="card-hotel-img">
+                                <img src="media/ristoranti/r2d3-Ristorante-Bramante-interior-2022-10.jpg">
+                            </div>
+                            <div class="card-body">
+                                <p id="title">Ristorante "Bramante"</p>
+                                <div id="more">
+                                    <p>
+                                        Num. Telefono: 327 197 1960
+                                        <a href="https://www.tripadvisor.it/Restaurant_Review-g1531840-d5532549-Reviews-Ristorante_Bramante-Fermignano_Province_of_Pesaro_and_Urbino_Marche.html"></a>
+                                    </p>
+                                </div>
+                                <p class="readmore">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-hotel">
+                            <div class="card-hotel-img">
+                                <img src="media/ristoranti/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2b1fTvdwG85tnlgp5gPzY7ZeSE_zXhSBneXYxJm_HV5PUiafs3mdtLAkbaxMYwQddg.webp">
+                            </div>
+                            <div class="card-body">
+                                <p id="title">Ristorante "La Pieve da Leo"</p>
+                                <div id="more">
+                                    <p>
+                                        Num. Telefono: 0722 331117
+                                        <a href="https://www.tripadvisor.it/Restaurant_Review-g1531840-d19974819-Reviews-La_Pieve_Da_Leo-Fermignano_Province_of_Pesaro_and_Urbino_Marche.html"></a>
+                                    </p>
+                                </div>
+                                <p class="readmore">
+                                </p>
+                            </div>
+                        </div>                        
+                    </div>
+                
+                <h2><a id="hotel2">Ristoranti presso il Furlo</a></h2>
+                <div class="card-hotel-grid-3">
+                    <div class="card-hotel">
+                        <div class="card-hotel-img">
+                            <img src="media/ristoranti/facciata-del-ristorante.jpg">
+                        </div>
+                        <div class="card-body">
+                            <p id="title"> Ristorante "Antico Furlo"</p>
+                            <div id="more">
+                                Num. Telefono: 0721 700096
+                                <a href="https://www.tripadvisor.it/Restaurant_Review-g1050048-d1931653-Reviews-Ristorante_Antico_Furlo-Acqualagna_Province_of_Pesaro_and_Urbino_Marche.html">Link</a>
+                            </div>
+                            <p class="readmore">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-hotel">
+                        <div class="card-hotel-img">
+                            <img src="media/ristoranti/la-sera.jpg">
+                        </div>
+                        <div class="card-body">
+                            <p id="title">Chiosco delle Acquile</p>
+                            <div id="more">
+                                <p>Num. Telefono: 0721 700096</p>
+                                <a href="https://www.tripadvisor.it/Restaurant_Review-g1050048-d4402816-Reviews-Chiosco_delle_Aquile-Acqualagna_Province_of_Pesaro_and_Urbino_Marche.html">Link</a>
+                            </div>
+                            <p class="readmore">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-hotel">
+                        <div class="card-hotel-img">
+                            <img src="media/ristoranti/download.jpg">
+                        </div>
+                        <div class="card-body">
+                            <p id="title">Ristorante "La Ginestra"</p>
+                            <div id="more">
+                                <p>Num. Telefono: 0721 797033</p>
+                                <a href="https://www.ginestrafurlo.it/">Link</a>
+                            </div>
+                            <p class="readmore">
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <br>
-                <div id="container">
-                    <a href="https://www.tripadvisor.it/Restaurant_Review-g1531840-d17213124-Reviews-Burgheria_Steak_House_da_Bindo-Fermignano_Province_of_Pesaro_and_Urbino_Marche.html">
-                    <h3>Burgheria steak-house da Bindo</h3>    
-                    </a>
-                    <img src="media/ristoranti/2fa4b5ae-94d8-4aef-b6aa-b3e011d91390.avif" style="width: 50%;">
-                    <p>Ristorante - osteria</p>
-                    <br>
-                    <p>Num. Telefono: 0722 331407</p>
+                <h2><a id="hotel2">Ristoranti presso Acqualagna</a></h2>
+                <div class="card-hotel-grid-1">
+                    <div class="card-hotel">
+                        <div class="card-hotel-img">
+                            <img src="media/ristoranti/download2.jpg">
+                        </div>
+                        <div class="card-body">
+                        <p id="title"> Ristorante "Birra al Pozzo"</p>
+                        <div id="more">
+                            <p>Num. Telefono: 0721 700084</p>
+                            <a href="https://www.tripadvisor.it/Restaurant_Review-g1050048-d5499165-Reviews-Birra_Al_Pozzo-Acqualagna_Province_of_Pesaro_and_Urbino_Marche.html">Link</a>
+                        </div>
+                        <p class="readmore">
+                        </p>
+                    </div>
                 </div>
-                <br>
-                <div id="container">
-                    <a href="https://www.tripadvisor.it/Restaurant_Review-g1531840-d5532549-Reviews-Ristorante_Bramante-Fermignano_Province_of_Pesaro_and_Urbino_Marche.html">
-                    <h3>Ristorante Bramante</h3>
-                    </a>
-                    <img src="media/ristoranti/r2d3-Ristorante-Bramante-interior-2022-10.jpg" style="width: 50%;">
-                    <p>Ristorante</p>
-                    <br>
-                    <p>Num. Telefono: 327 197 1960</p>
+                <h2><a id="hotel2">Ristoranti presso Frontone</a></h2>
+                <div class="card-hotel-grid-2">
+                    <div class="card-hotel">
+                        <div class="card-hotel-img">
+                            <img src="media/ristoranti/download10.jpg">
+                        </div>
+                        <div class="card-body">
+                            <p id="title">"Alla Locanda Di Fontebella"</p>
+                            <div id="more">
+                                Num. Telefono: 0721 787007
+                            </div>
+                            <p class="readmore">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-hotel">
+                        <div class="card-hotel-img">
+                            <img src="media/ristoranti/rd17-Taverna-della-Rocca-facade-2022-10-1.jpg">
+                        </div>
+                        <div class="card-body">
+                            <p id="title">Taverna della Rocca</p>
+                            <div id="more">
+                                Num. Telefono: 0721 786218
+                            </div>
+                            <p class="readmore"></p>
+                        </div>
+                    </div>
                 </div>
-                <br>
-                <div id="container">
-                    <a href="https://www.tripadvisor.it/Restaurant_Review-g1531840-d19974819-Reviews-La_Pieve_Da_Leo-Fermignano_Province_of_Pesaro_and_Urbino_Marche.html">
-                        <h3>Ristorante Pizzeria La Pieve da Leo</h3>
-                    </a>
-                    <img src="media/ristoranti/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2b1fTvdwG85tnlgp5gPzY7ZeSE_zXhSBneXYxJm_HV5PUiafs3mdtLAkbaxMYwQddg.webp" style="width: 50%;">
-                    <p>Ristorante</p>
-                    <br>
-                    <p>Num. Telefono: 0722 331117</p>
-                </div>
-                <br>
-                <h2>Ristoranti presso Fermignano-Furlo</h2>
-                <div id="container">
-                    <a href="https://www.tripadvisor.it/Restaurant_Review-g1050048-d4402816-Reviews-Chiosco_delle_Aquile-Acqualagna_Province_of_Pesaro_and_Urbino_Marche.html">
-                        <h3>Chiosco delle Aquile</h3>
-                    </a>
-                    <img src="media/ristoranti/la-sera.jpg" style="width: 50%;">
-                    <p>Ristorante</p>
-                    <br>
-                    <p>Num. Telefono: 333 220 3585</p>
-                </div>
-                <br>
-                <div id="container"> 
-                    <a href="https://www.tripadvisor.it/Restaurant_Review-g1050048-d1931653-Reviews-Ristorante_Antico_Furlo-Acqualagna_Province_of_Pesaro_and_Urbino_Marche.html">
-                        <h3>Ristorante Albergo Antico Furlo</h3>
-                    </a>
-                    <img src="media/ristoranti/facciata-del-ristorante.jpg" style="width: 50%;">
-                    <p>Ristorsnte - Hotel</p>
-                    <br>
-                    <p>Num. Telefono: 0721 700096</p>
-                </div>
-                <br>
-                <h2>Ristoranti presso Furlo-Morleone</h2>
-                <div id="container">
-                    <a href="https://www.ginestrafurlo.it/">
-                        <h3>La Ginestra Ristorante e Bike Hotel</h3>
-                    </a>
-                    <img src="media/ristoranti/download.jpg" style="width: 50%;">
-                    <p>Ristorante Hotel</p>
-                    <br>
-                    <p>Num. Telefono: 0721 797033</p>
-                </div>
-                <br>
-                <div id="container">
-                    <a href="https://www.tripadvisor.it/Restaurant_Review-g1050048-d5499165-Reviews-Birra_Al_Pozzo-Acqualagna_Province_of_Pesaro_and_Urbino_Marche.html">
-                        <h3>Albergo Ristorante Birra al Pozzo</h3>
-                    </a>
-                    <img src="media/ristoranti/download2.jpg" style="width: 50%;">
-                    <p>Ristorante - Hotel</p>
-                    <br>
-                    <p>Num. Telefono: 0721 700084</p>
-                </div>
-                <br>
-                <h2>Ristoranti presso Molleone-FonteAvellana</h2>
-                <div id="container">
-                    <a href="https://it.tripadvisor.ch/ShowUserReviews-g2007592-d8414798-r325423135-Alla_locanda_di_Fontebella-Frontone_Province_of_Pesaro_and_Urbino_Marche.html">
-                        <h3>Alla Locanda Di Fontebella Di Serra Diego & C. S.A.S.</h3>
-                    </a>
-                    <img src="media/ristoranti/download10.jpg" style="width: 50%;">
-                    <p>Ristorante</p>
-                    <br>
-                    <p>Num. Telefono: 0721 787007</p>
-                </div>
-                <br>
-                <div id="container">
-                    <a href="https://www.tripadvisor.it/Restaurant_Review-g2007592-d2005930-Reviews-Taverna_della_Rocca-Frontone_Province_of_Pesaro_and_Urbino_Marche.html">
-                        <h3>Taverna della Rocca</h3>
-                    </a>
-                    <img src="media/ristoranti/rd17-Taverna-della-Rocca-facade-2022-10-1.jpg" style="width: 50%;">
-                    <p>Ristorante</p>
-                    <br>
-                    <p>Num. Telefono: 0721 786218</p>
-                </div>
-            </div>
+            
+    <script>
+        let more = document.querySelectorAll('.readmore');
+        for(let i=0; i<more.length; i++){
+            more[i].addEventListener('click', function(){
+                console.log("HO cliccato!");
+                if (more[i].parentNode.childNodes.item(3).id === "more")
+                    more[i].parentNode.childNodes.item(3).id += " active";
+                else 
+                    more[i].parentNode.childNodes.item(3).id = "more"
+            })
+        }        
+    </script>
     </body>
 </html>

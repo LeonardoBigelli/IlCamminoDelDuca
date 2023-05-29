@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Nunito:wght@300&display=swap');
+
 html
 {
   -webkit-tap-highlight-color:transparent;
@@ -39,7 +41,8 @@ body{
 nav{
     /*background: #282828;*/
     background: #cccccc;
-    font-family: 'Poppins', sans-serif;
+    /*font-family: 'Poppins', sans-serif;*/
+    font-family: 'Nunito', sans-serif;
     width: 92%;
     margin: auto;
     border-radius: 0 0 10px 10px;
@@ -100,7 +103,7 @@ nav ul ul li{
     position: relative;
     float: none;
     margin: 0px;
-    width: 250px;
+    width: 260px;
     display: list-item;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -253,6 +256,19 @@ img{
     top: 0;
 }
 
+/*far aggiungere questo*/
+#languages li{
+    width: 80px;
+}
+
+#languages li a{
+    line-height: 30px;
+}
+
+#languages li a:hover{
+    color: #fff;
+}
+
 /*.dot{
     cursor: pointer;
     height: 15px;
@@ -322,6 +338,7 @@ img{
     margin-bottom: 35px;
     font-weight: 500;
     position: relative;
+    font-family: 'Wix Madefor Display' ,sans-serif;
 }
 
 .footer-col h4::before{
@@ -403,6 +420,7 @@ img{
     grid-template-columns: 1fr max-content 1fr;
     grid-column-gap: 1.2rem;
     align-items: center;
+    font-family: 'Wix Madefor Display', sans-serif;
     
 }
 
@@ -441,6 +459,7 @@ img{
 .grid-item .logotext{
     font-size: 20px;
     text-align: center;
+    font-family: 'Lora', sans-serif;
 }
 
 .space-footer{
@@ -803,6 +822,9 @@ img{
     }
 }
 
+.tratta h3{
+    font-family: 'Wix Madefor Display', sans-serif !important;
+}
 
 
 
