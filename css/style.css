@@ -823,7 +823,7 @@ img{
 }
 
 .tratta h3{
-    font-family: 'Wix Madefor Display', sans-serif;
+    font-family: 'Wix Madefor Display', sans-serif !important;
 }
 
 
