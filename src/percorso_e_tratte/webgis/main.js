@@ -5,7 +5,8 @@ import {Select} from "ol/interaction";
 import {click} from "ol/events/condition";
 import {
     foodAndSleepLayer,
-    iconPath, iconStyle,
+    iconPath,
+    iconStyle,
     infoAndSafetyLayer,
     mapLayer,
     sectionsLayer,
@@ -86,6 +87,11 @@ function setFeatureVisible(feature, show)
     feature.setStyle(show ? iconStyle : []);
 }
 
+const poiLayerGroup = new LayerGroup(
+    {
+        title: "Punti di interesse",
+        layers: [foodAndSleepLayer, infoAndSafetyLayer],
+    });
 
 //Extent:
 //[1397142.4969995867, 5362888.233718974, 1421189.678525492, 5425968.900521599]
@@ -94,26 +100,14 @@ const mapView = new View(
     {
         center: viewStartingPos,
         zoom: 10,
-    })
-
-//Point of interest layer group.
-const pointOfInterestLayerGroup = new LayerGroup(
-    {
-       title: "Punti di interesse",
-       layers: [foodAndSleepLayer, infoAndSafetyLayer]
     });
-
 
 //Create map with the layers.
 const map = new Map(
     {
         target: 'webgis',
-        layers: [new LayerGroup(
-            {
-                title: "Livelli",
-                layers: [mapLayer, tracksLayer, sectionsLayer, pointOfInterestLayerGroup]
-            })],
-        view: mapView,
+        layers: [mapLayer, tracksLayer, sectionsLayer, poiLayerGroup],
+        view: mapView
     });
 
 //Legend init.
@@ -169,7 +163,7 @@ closer.onclick = function ()
     return false;
 };
 
-//Select interaction
+//Select interaction.
 const selectSectionsInteraction = new Select(
     {
         condition: click,
@@ -233,7 +227,7 @@ const selectPOIInteraction = new Select(
         condition: click,
         style: onSelectPOInStyle,
         filter: (feature, layer) =>
-            pointOfInterestLayerGroup.getLayersArray().includes(layer),
+            poiLayerGroup.getLayersArray().includes(layer),
     });
 map.addInteraction(selectPOIInteraction);
 

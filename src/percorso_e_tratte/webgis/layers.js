@@ -4,10 +4,11 @@ import VectorSource from "ol/source/Vector";
 import {GeoJSON} from "ol/format";
 import {all as allStrategy} from "ol/loadingstrategy";
 import VectorLayer from "ol/layer/Vector";
-import {Circle, Fill, Icon, RegularShape, Stroke, Style} from "ol/style";
+import {Fill, Icon, RegularShape, Stroke, Style} from "ol/style";
 
-//Request url for geoserver layers.
+//GeoJSON data folder.
 const geoJSONFolder = "webgis/data/";
+export const iconPath = "webgis/icons/";
 
 //Init GeoJson format.
 const geoJson = new GeoJSON(
@@ -16,7 +17,6 @@ const geoJson = new GeoJSON(
 		extractGeometryName: true,
 	});
 
-export const iconPath = "webgis/icons/";
 
 //Tile layer source.
 const mapLayerParam =
@@ -30,13 +30,13 @@ const mapLayerParam =
 //Tile layer.
 export const mapLayer = new TileLayer(mapLayerParam);
 
-//Track layer source from geoserver.
+//Tracks layer source.
 const trackSource = new VectorSource(
 	{
 		format: geoJson,
 		url: geoJSONFolder + "tracks.geojson",
 		strategy: allStrategy
-	})
+	});
 
 //Track layer.
 export const tracksColors = ["#448aff", "#1565c0", "#009688", "#8bc34a", "#ffc107", "#ff9800", "#f44336", "#ad1457"];

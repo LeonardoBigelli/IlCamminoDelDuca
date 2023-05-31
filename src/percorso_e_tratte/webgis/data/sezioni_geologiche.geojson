@@ -8,6 +8,6 @@
 { "type": "Feature", "properties": { "id": 3, "nome": "Santa Maria - Frontone", "stato": "0", "path_img": "M.Varco-Frontone.jpg" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 12.741727105035672, 43.601287659577814 ], [ 12.708814217556515, 43.518386221281439 ] ] ] } },
 { "type": "Feature", "properties": { "id": 1, "nome": "Fermignano - Furlo", "stato": "1", "path_img": "Fermignano-Furlo.jpg" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 12.615513878004512, 43.696809493200504 ], [ 12.722488709856222, 43.637651212354776 ] ] ] } },
 { "type": "Feature", "properties": { "id": 5, "nome": "Scheggia - Gubbio", "stato": "0", "path_img": "Scheggia-Gubbio.jpg" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 12.664252816848792, 43.396346495248757 ], [ 12.571974926272755, 43.35511580954811 ] ] ] } },
-{ "type": "Feature", "properties": { "id": 4, "nome": "Frontone-Scheggia", "stato": "0", "path_img": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 12.743305094389381, 43.507009070787745 ], [ 12.641078653241093, 43.418136623592254 ] ] ] } }
+{ "type": "Feature", "properties": { "id": 4, "nome": "Frontone-Scheggia", "stato": "0", "path_img": "MonteCatria.jpg" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 12.743305094389381, 43.507009070787745 ], [ 12.641078653241093, 43.418136623592254 ] ] ] } }
 ]
 }
