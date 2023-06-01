@@ -15,7 +15,7 @@ import {
 import LayerGroup from "ol/layer/Group";
 import {Fill, Icon, RegularShape, Stroke, Style} from "ol/style";
 import {foodAndDrinkCategories, infoAndSafetyCategories, sectionsCategories, tracksCategories} from "./legend";
-import {LegendEntryIcons, WebGISLegend} from "./WebGisLegend";
+import {LegendEntryCategorized, WebGISLegend} from "./WebGisLegend";
 
 const viewStartingPos = [1409646.026322705, 5394869.494452778]; //Starting position of the view.
 
@@ -289,10 +289,10 @@ waitSourcesLoading().then(() =>
     const tracksFilter = (category, feature) =>
         category.id === feature.get("id");
 
-    const tracksLegendEntry = new LegendEntryIcons(tracksLayer, tracksCategories, tracksFilter);
-    const sectionsLegendEntry = new LegendEntryIcons(sectionsLayer, sectionsCategories, tracksFilter);
-    const foodAndSleepLegendEntry = new LegendEntryIcons(foodAndSleepLayer, foodAndDrinkCategories, iconFilter);
-    const infoAndSafetyLegendEntry = new LegendEntryIcons(infoAndSafetyLayer, infoAndSafetyCategories, iconFilter);
+    const tracksLegendEntry = new LegendEntryCategorized(tracksLayer, tracksCategories, tracksFilter);
+    const sectionsLegendEntry = new LegendEntryCategorized(sectionsLayer, sectionsCategories, tracksFilter);
+    const foodAndSleepLegendEntry = new LegendEntryCategorized(foodAndSleepLayer, foodAndDrinkCategories, iconFilter);
+    const infoAndSafetyLegendEntry = new LegendEntryCategorized(infoAndSafetyLayer, infoAndSafetyCategories, iconFilter);
 
     legend.addEntry(tracksLegendEntry);
     legend.addEntry(sectionsLegendEntry);

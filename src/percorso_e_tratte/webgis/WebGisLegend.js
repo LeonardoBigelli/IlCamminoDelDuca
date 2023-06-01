@@ -119,7 +119,7 @@ export class LegendEntry
 /**
  * Represent an entry that owns other child entries inside the legend.
  */
-export class LegendEntryIcons extends LegendEntry
+export class LegendEntryCategorized extends LegendEntry
 {
 	constructor(layer, categories, filter)
 	{
