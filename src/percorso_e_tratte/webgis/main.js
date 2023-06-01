@@ -248,8 +248,11 @@ selectPOIInteraction.on("select", event =>
     const feature = event.selected[0];
     const poiName = feature.get("nome");
     const poiType = feature.get("tipo");
+    const poiAddress = feature.get("indirizzo");
     const poiSite = feature.get("sito_web");
     const poiPhone = feature.get("telefono");
+    const poiLat = feature.get("lat");
+    const poiLong = feature.get("long");
 
     //Elements of the popup.
     const nameElement = document.getElementById("poi-name");
@@ -258,6 +261,8 @@ selectPOIInteraction.on("select", event =>
     const siteContentElement = document.getElementById("poi-site-element");
     const phoneElement = document.getElementById("poi-phone");
     const phoneContentElement = document.getElementById("poi-phone-element");
+    const addressElement = document.getElementById("poi-address");
+    const addressContentElement = document.getElementById("poi-address-element");
 
     console.log(feature.getProperties());
 
@@ -266,10 +271,13 @@ selectPOIInteraction.on("select", event =>
     siteContentElement.href = poiSite;
     phoneContentElement.innerText = poiPhone;
     phoneContentElement.href = "tel:" + poiPhone;
+    addressContentElement.innerText = poiAddress;
+    addressContentElement.href = "https://maps.google.com/?ll=" + poiLat + "," + poiLong;
 
     typeElement.hidden = !poiType;
     siteElement.hidden = !poiSite;
     phoneElement.hidden = !poiPhone;
+    addressElement.hidden = !poiAddress;
 });
 
 //Add the layers to the legend when they are all loaded.
