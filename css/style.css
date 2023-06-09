@@ -138,13 +138,13 @@ nav ul ul li a:hover{
 nav .logo{
     float: left;
     line-height: 70px;
-    padding-left: 15px;
+    padding-left: 16px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
 nav .logo img{
-    width: 70px;
+    width: 90px;
     height: 70px;
 }
 
@@ -363,6 +363,7 @@ img{
     display: block;
     margin-bottom: 10px;
     transition: all .3s ease;
+    font-family: 'Wix Madefor Display', sans-serif;
 }
 
 .footer-col ul li a:hover{
