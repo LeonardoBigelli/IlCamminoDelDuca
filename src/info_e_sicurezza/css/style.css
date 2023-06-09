@@ -5,7 +5,7 @@
 }
 
 html{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .hc0, .hc, .hc2, .hc3, .hc4{
