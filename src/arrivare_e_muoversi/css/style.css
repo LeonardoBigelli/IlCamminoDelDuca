@@ -12,17 +12,20 @@ h2{
     line-height: normal;
     text-align: center;
 
+    margin: 40px 70px;
+    border: 2px solid #005997;
+    width: 92%;
     color: #000000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-hr{
+/*hr{
     border: 3px solid #005997;
     margin: 80px;
-}
+}*/
 
 .box-1{
-    box-sizing: content-box;
+    box-sizing: border-box;
     background: #E7E7E7;
     border: 3px solid #005997;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -54,7 +57,7 @@ h4 {
     color: #FFFFFF;
 }
 
-p,li{
+p,ul,li{
    font-family: 'Nunito';
    font-style: normal;
    font-weight: 400;
@@ -62,6 +65,21 @@ p,li{
    line-height: 48px;
    margin: 0px 30px;
    color: #000000;
+
+}
+
+ button{
+    background: #005997;
+    border: 3px solid #005997;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 55px;
+    margin: 15px;
+    width: 120px;
+
+    font-family: 'Nunito';
+    font-size: 15px;
+    font-style: normal;
+    color: #FFFFFF;
 }
 
 /* Divisione più esterna per righe, per avere due colonne accanto*/
@@ -70,7 +88,7 @@ p,li{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin:80px;
+    margin:10px 40px;
 }
 
 /*Divisione interna per colonne*/
