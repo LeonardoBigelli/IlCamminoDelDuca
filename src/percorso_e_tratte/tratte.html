@@ -7,127 +7,243 @@
     
     <!--Foglio di stile-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../info_e_sicurezza/css/style.css">
     
     <!-- IonIcons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
-    </head>
+</head>
 <body>
-    <!-- Navbar -->
-    <nav>
-        <div class="logo">
-            <a href="../../index.html"><img src="../../media/logo.png" alt=""></a>
-        </div>
-        <label for="btn" class="icon">
-            <span class="fa fa-bars"><ion-icon name="menu-outline"></ion-icon></span>
-        </label>
-        <input type="checkbox" id="btn">
 
-        <!-- Inizio elenco -->
-        <ul>
-            <!-- 1 -->
-            <li>
-                <label for="btn-1" class="show">Percorso e Tratte +</label>
-                <a href="#">Percorso e Tratte</a>
-                <input type="checkbox" id="btn-1">
-                <!-- Sottoelenco 1 -->
-                <ul>
-                    <li><a href="itinerario.html">Itinerario (WebGIS)</a></li>
-                    <li><a href="tratte.html">Tratte (GPX) (sei qui) </a></li>
-                    <li><a href="preparati_al_percorso.html">Preparati al percorso</a></li>
-                    <li><a href="segnaletica.html">Segnaletica</a></li>
-                    <li><a href="credenziale.html">Credenziale</a></li>
-                </ul>
-            </li>
+    <!-- COMPRENDE TUTTO -->
+    <div id="struttura_principale">
 
-            <!-- 2 -->
-            <li>
-                <label for="btn-2" class="show">Storia e geografia +</label>
-                <a href="#">Storia e geografia</a>
-                <input type="checkbox" id="btn-2">
-                <ul>
-                    <li><a href="../storia_e_geografie/geologia_del_cammino.html">Geologia del cammino</a></li>
-                    <li><a href="../storia_e_geografie/la_storia_dell_uomo.html">La storia dell'uomo</a></li>
-                    <li><a href="../storia_e_geografie/storie_e_geografie_del_duca.html">Storie e geografie del Duca</a></li>
-                    <li><a href="../storia_e_geografie/geografia_della_cucina_locale.html">Geografia della cucina locale</a></li>
-                    <li><a href="../storia_e_geografie/vino_o_birra.html">Vino o birra?</a></li>
-                    <li><a href="../storia_e_geografie/tradizioni.html">Tradizioni</a></li>
-                    <li><a href="../storia_e_geografie/natura_e_ambiente.html">Natura e ambiente</a></li>
-                </ul> 
-            </li>
-
-            <!-- 3 -->
-            <li>
-                <label for="btn-3" class="show">Arrivare e muoversi +</label>
-                <a href="#">Arrivare e muoversi</a>
-                <input type="checkbox" id="btn-3">
-                <ul>
-                    <li><a href="../arrivare_e_muoversi/arrivare_a_urbino.html">Arrivare ad Urbino</a></li>
-                    <li><a href="../arrivare_e_muoversi/arrivare_a_gubbio.html">Arrivare a Gubbio</a></li>
-                    <li><a href="../arrivare_e_muoversi/collegamenti_gubbio_urbino.html">Collegamenti Gubbio - Urbino</a></li>
-                    <li><a href="../arrivare_e_muoversi/noleggi.html">Noleggi</a></li>
-                    <li><a href="../arrivare_e_muoversi/autolinee.html">Autolinee</a></li>
-                    <li><a href="../arrivare_e_muoversi/taxi.html">Taxi</a></li>
-                </ul>
-            </li>
-
-            <!-- 4 -->
-            <li>
-                <label for="btn-4" class="show">Dormire e mangiare +</label>
-                <a href="#">Dormire e mangiare</a>
-                <input type="checkbox" id="btn-4">
-                <ul>
-                    <li><a href="../dormire_e_mangiare/hotel.html">Hotel</a></li>
-                    <li><a href="../dormire_e_mangiare/b_and_b.html">B&B</a></li>
-                    <li><a href="../dormire_e_mangiare/ostelli.html">Ostelli</a></li>
-                    <li><a href="../dormire_e_mangiare/tende.html">Tende</a></li>
-                    <li><a href="../dormire_e_mangiare/bar.html">Bar</a></li>
-                    <li><a href="../dormire_e_mangiare/alimentari.html">Alimentari</a></li>
-                    <li><a href="../dormire_e_mangiare/gastronomie.html">Gastronomie</a></li>
-                    <li><a href="../dormire_e_mangiare/osterie.html">Osterie</a></li>
-                    <li><a href="../dormire_e_mangiare/ristoranti.html">Ristoranti</a></li>
-                    <li><a href="../dormire_e_mangiare/pizzerie.html">Pizzerie</a></li>
-                </ul>
-            </li>
-
-            <!-- 5 -->
-            <li>
-                <label for="btn-5" class="show">Attività e giochi +</label>
-                <a href="#">Attività e giochi</a>
-                <input type="checkbox" id="btn-5">
-                <ul>
-                    <li><a href="../attivita_e_giochi/test_del_camminatore.html">Test del camminatore</a></li>
-                    <li><a href="../attivita_e_giochi/contest_fotografici.html">Contest fotografici</a></li>
-                    <li><a href="../attivita_e_giochi/viaggi_di_gruppo.html">Viaggi di gruppo</a></li>
-                    <li><a href="../attivita_e_giochi/orientamento.html">Orientamento</a></li>
-                    <li><a href="../attivita_e_giochi/geologo_per_un_giorno.html">Geologo per un giorno</a></li>
-                    <li><a href="../attivita_e_giochi/altre_attivita.html">Altre attività</a></li>
-                </ul>
-            </li>
-
-            <!-- 6 -->
-            <li>
-                <label for="btn-6" class="show">Info e sicurezza +</label>
-                <a href="../info_e_sicurezza/info.html">Info e sicurezza</a>
-                <input type="checkbox" id="btn-6">
-                <ul>
-                    <li><a href="../info_e_sicurezza/info.html">Info</a></li>
-                    <li><a href="../info_e_sicurezza/sicurezza.html">Sicurezza</a></li>
-                </ul>
-            </li>
-
-            <!-- Traduzione e login -->
-            <li class="lang-log">
-                <a href="#"><ion-icon name="language-outline"></ion-icon></a>
-                <a href="../login/login.html"><ion-icon name="person-outline"></ion-icon></a>
-            </li>
-        </ul>
-    </nav>
-    <div style="font-size: xx-large; text-align: center;font-family: 'Wix Madefor Display', sans-serif;">
-        <p> Tratte GPX. </p>
+        <div id="menu">
+            <!-- Navbar -->
+            <nav>
+    <div class="logo">
+        <a href="../../index.html"><img src="../../media/logo.png" alt=""></a>
     </div>
-    <p class="front"> In questa pagina è possibile scaricare il GPX di ogni tratta. (PAGINA ANCORA IN COSTRUZIONE)</p> <hr>
+    <label for="btn" class="icon">
+        <span class="fa fa-bars"><ion-icon name="menu-outline"></ion-icon></span>
+    </label>
+    <input type="checkbox" id="btn">
+
+    <!-- Inizio elenco -->
+    <ul>
+        <!-- 1 -->
+        <li>
+            <label for="btn-1" class="show">Percorso e Tratte +</label>
+            <a href="#">Percorso e Tratte</a>
+            <input type="checkbox" id="btn-1">
+            <!-- Sottoelenco 1 -->
+            <ul>
+                <li><a href="http://webgis.ilcamminodelduca.it">Itinerario (WebGIS)</a></li>
+                <li><a href="tratte.html">Tratte (GPX) (sei qui) </a></li>
+                <li><a href="preparati_al_percorso.html">Preparati al percorso</a></li>
+                <li><a href="segnaletica.html">Segnaletica</a></li>
+                <li><a href="credenziale.html">Credenziale</a></li>
+            </ul>
+        </li>
+
+        <!-- 2 -->
+        <li>
+            <label for="btn-2" class="show">Storia e geografia +</label>
+            <a href="#">Storia e geografia</a>
+            <input type="checkbox" id="btn-2">
+            <ul>
+                <li><a href="../storia_e_geografie/geologia_del_cammino.html">Geologia del cammino</a></li>
+                <li><a href="../storia_e_geografie/la_storia_dell_uomo.html">La storia dell'uomo</a></li>
+                <li><a href="../storia_e_geografie/storie_e_geografie_del_duca.html">Storie e geografie del Duca</a></li>
+                <li><a href="../storia_e_geografie/geografia_della_cucina_locale.html">Geografia della cucina locale</a></li>
+                <li><a href="../storia_e_geografie/vino_o_birra.html">Vino o birra?</a></li>
+                <li><a href="../storia_e_geografie/tradizioni.html">Tradizioni</a></li>
+                <li><a href="../storia_e_geografie/natura_e_ambiente.html">Natura e ambiente</a></li>
+            </ul> 
+        </li>
+
+        <!-- 3 -->
+        <li>
+            <label for="btn-3" class="show">Arrivare e muoversi +</label>
+            <a href="#">Arrivare e muoversi</a>
+            <input type="checkbox" id="btn-3">
+            <ul>
+                <li><a href="../arrivare_e_muoversi/arrivare_a_urbino.html">Arrivare ad Urbino</a></li>
+                <li><a href="../arrivare_e_muoversi/arrivare_a_gubbio.html">Arrivare a Gubbio</a></li>
+                <li><a href="../arrivare_e_muoversi/collegamenti_gubbio_urbino.html">Collegamenti Gubbio - Urbino</a></li>
+                <li><a href="../arrivare_e_muoversi/noleggi.html">Noleggi</a></li>
+                <li><a href="../arrivare_e_muoversi/autolinee.html">Autolinee</a></li>
+                <li><a href="../arrivare_e_muoversi/taxi.html">Taxi</a></li>
+            </ul>
+        </li>
+
+        <!-- 4 -->
+        <li>
+            <label for="btn-4" class="show">Dormire e mangiare +</label>
+            <a href="#">Dormire e mangiare</a>
+            <input type="checkbox" id="btn-4">
+            <ul>
+                <li><a href="../dormire_e_mangiare/hotel.html">Hotel</a></li>
+                <li><a href="../dormire_e_mangiare/b_and_b.html">B&B</a></li>
+                <li><a href="../dormire_e_mangiare/ostelli.html">Ostelli</a></li>
+                <li><a href="../dormire_e_mangiare/tende.html">Tende</a></li>
+                <li><a href="../dormire_e_mangiare/bar.html">Bar</a></li>
+                <li><a href="../dormire_e_mangiare/alimentari.html">Alimentari</a></li>
+                <li><a href="../dormire_e_mangiare/gastronomie.html">Gastronomie</a></li>
+                <li><a href="../dormire_e_mangiare/osterie.html">Osterie</a></li>
+                <li><a href="../dormire_e_mangiare/ristoranti.html">Ristoranti</a></li>
+                <li><a href="../dormire_e_mangiare/pizzerie.html">Pizzerie</a></li>
+            </ul>
+        </li>
+
+        <!-- 5 -->
+        <li>
+            <label for="btn-5" class="show">Attività e giochi +</label>
+            <a href="#">Attività e giochi</a>
+            <input type="checkbox" id="btn-5">
+            <ul>
+                <li><a href="../attivita_e_giochi/test_del_camminatore.html">Test del camminatore</a></li>
+                <li><a href="../attivita_e_giochi/contest_fotografici.html">Contest fotografici</a></li>
+                <li><a href="../attivita_e_giochi/viaggi_di_gruppo.html">Viaggi di gruppo</a></li>
+                <li><a href="../attivita_e_giochi/orientamento.html">Orientamento</a></li>
+                <li><a href="../attivita_e_giochi/geologo_per_un_giorno.html">Geologo per un giorno</a></li>
+                <li><a href="../attivita_e_giochi/altre_attivita.html">Altre attività</a></li>
+            </ul>
+        </li>
+
+        <!-- 6 -->
+        <li>
+            <label for="btn-6" class="show">Info e sicurezza +</label>
+            <a href="../info_e_sicurezza/info.html">Info e sicurezza</a>
+            <input type="checkbox" id="btn-6">
+            <ul>
+                <li><a href="../info_e_sicurezza/info.html">Info</a></li>
+                <li><a href="../info_e_sicurezza/sicurezza.html">Sicurezza</a></li>
+            </ul>
+        </li>
+
+        <!-- Traduzione e login -->
+        <li class="lang-log">
+            <a href="#"><ion-icon name="language-outline"></ion-icon></a>
+            <a href="../login/login.html"><ion-icon name="person-outline"></ion-icon></a>
+        </li>
+    </ul>
+            </nav>
+        </div>
+       
+
+        <!-- COMPRENDE i CONTENUTI-->
+        <div id="contenuti">
+
+            <div class="titoli">
+                <div class="titolo1">
+                    <p>Percorso</p>
+                </div>
+    
+                <div class="titolo2">
+                    <p>Tratte</p>
+                </div>
+                
+                <div class="clear"></div>
+            </div>
+            
+
+            <br><br>
+
+            <!-- CONTIENE I 2 paragrafi -->
+            <div class="contenuti-paragrafi">
+
+                <!-- PAR 1 -->
+                <div class="contenuto-paragrafo1">
+                    <p>
+                        Il Cammino del Duca attraversa l’Appennino Umbro-Marchigiano in un transetto di circa 100 km. 
+                        Il percorso è stato pensato a tratte che congiungono località che possono divenire tappa per i camminatori,
+                        organizzandoli a seconda delle loro capacità e desideri. 
+                        Per il futuro sono previste alcune varianti che offriranno maggiori possibilità di percorrenza,
+                        intrecciandosi inoltre con altre Vie quali Il Cammino dei Cappuccini, il Sentiero Italia e le varie vie francescane. 
+                        Interessa due provincie (Pesaro-Urbino e Perugia) in due regioni diverse (Marche e Umbria, toccando sette
+                        comuni: Urbino, Fermignano, Acqualagna, Cagli, Frontone, Serra Sant’Abbondio, Scheggia e Gubbio. Questi sono i luoghi 
+                        del Duca di Urbino, Federico II, e lungo il suo percorso ci sono numerose tracce della storia di questo regnante illuminato. 
+                        Non di meno è tutta l’altra storia che dalla preistoria a quella recente combinando l’opera dell’uomo insieme a quella della 
+                        natura in paesaggi resi famosi da artisti del calibro di Raffaello Sanzio, Piero della Francesca.
+                    </p><br><br>
+    
+                    <p> Usciti infatti da Urbino, Città ideale del Rinascimento, ci si immerge subito nei boschi e nei prati delle colline per raggiungere 
+                        Fermignano dove il Duca aveva la sua cartiera vicino alla torre e al ponte medioevale. Si risale poi per il Monte Pietralata su calanchi multicolori
+                         e si raggiunge la Gola del Furlo che si può ammirare dall’alto nella sua parte sud-occidentale. Poi il viaggio continua su colline e vallette 
+                         semisconosciute ma che permettono di ammirare sia il paesaggio del Furlo a nord che quello dello spartiacque appenninico (Monte Catria, Monte Nerone 
+                         e tanto altro) a sud, sud-ovest. Raggiunta la Pieve di Santa Maria delle Stelle, grazie a volontarie della zona, si può ammirare la Maestadella che fin 
+                         dal 1300 serviva da riparo per i pellegrini, che nel tempo hanno lasciato i loro segno anche con graffiti… in greco antico). Qui la presenza del Duca si sente.
+                          La frequentazione o passaggio del Duca per questi luoghi è ricordato, oltre che da una leggenda, anche da un grande architrave lapideo con lo stemma 
+                          federiciano, con probabilità proveniente dal suo palazzo (vedi anche la sezione Geografie e Storie). Inoltre, 
+                        tra gli affreschi della chiesa sono raffigurati Santiago con la sua conchiglia (simbolo del pellegrino) e Fonte Avellana da raggiungere tra breve.</p>
+                   
+                        
+                    <p> 
+                        Continuando per Monte Martello e Molleone, si può ammirare la delicata bellezza delle dolci colline che ci portano a Frontone,
+                        accompagnati dalla magnifica vista dei Monti Catria e Acuto. Si sale quindi al Castello di Frontone attraversando il borghetto.
+                        Quindi si prosegue per scendere nel paese, poi risalire Monte Roma e infine raggiungere la quiete e la magnificenza dell’Abazia di Fonte
+                        Avellana nella quale è dovuta la visita e magari anche il pernotto e la cena con i frati.
+                        Si risale quindi per un tratto del Sentiero Italia per arrivare alle pareti sud-orientali del Catria e ai suoi prati con i cavalli bradi 
+                        in un paesaggio dolomitico.
+                        Si scende quindi per le frazioni di Isola Fossara e Ponte Calcara (con le loro tradizioni che fondono religione e paganesimo) e, 
+                        alla fine, costeggiando il Fiume Sentino nel suo tratto iniziale, si raggiunge il paese di Scheggia, ancora una volta sulla via Flaminia.
+                        L’ultima tratta sale e scende per le colline a sud e raggiunge la Gola del Bottaccione nei pressi del famoso affioramento di rocce dal 
+                        quale si è iniziata a comprendere che la Terra, colpita da grandi asteroidi ha rischiato per la quinta volta l’estinzione della vita. 
+                        Infine, si percorre il sentiero sopra l’acquedotto medioevale con debole pendenza, che permette di avere una prospettiva diversa della
+                         gola e poi della piana ai piedi di Gubbio. La città si estende sotto l’ultimo tratto del percorso e si apre con la porta a monte. 
+                         La via lastricata conduce rapidamente al Palazzo Ducale di Gubbio dove il Duca Federico e la Contessa Battista Sforza alloggiavano
+                          piacevolmente. Qui il viaggio si conclude, ma si può decidere anche di continuare sui cammini di Francesco che passano da per questa
+                           città o tornare indietro a Urbino con i collegamenti dei mezzi pubblici, per ora.
+                    </p><br><br>
+                   
+                   
+                </div>
+
+                
+                <!-- PAR 2 -->
+                <div class="contenuto-paragrafo2">
+
+                    <p>
+                        In queste pagine non vengono stabilite delle tappe, 
+                        <br>ma si descrivono delle tratte.<br> Il camminatore potrà decidere di creare un 
+                        cammino sulla misura<br> delle sue capacità, tempo disponibile, desiderio di approfondire 
+                        <br>la conoscenza dei luoghi tra e venti e attività.
+
+                        <div class="card-hotel-grid-1">
+                            <div class="box-big">
+                                <div class = "hbox-1"><h4>Le tratte</h4></div>
+                                <br><br>
+                                <p>
+                                    <a href=".html">1.Urbino - Fermignano</a><br>
+                                    <a href=".html">2.Fermignano - Furlo</a><br>
+                                    <a href=".html">3.Furlo - Santa Maria delle Stelle</a><br>
+                                    <a href=".html">4.Santa Maria delle Stelle - Frontone</a><br>
+                                    <a href=".html">5.Frontone - Fonte Avellana</a><br>
+                                    <a href=".html">6.Fonte Avellana - Isola Fossara</a><br>
+                                    <a href=".html">7.Isola Fossara - Scheggia</a><br>
+                                    <a href=".html">8.Scheggia - Gubbio</a><br>
+                                </p>
+                                <br><br>
+                            </div>
+
+                        </div>
+
+                    </p>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<!--     <p class="front"> In questa pagina è possibile scaricare il GPX di ogni tratta. (PAGINA ANCORA IN COSTRUZIONE)</p> <hr>
     <div class="tratta">
         <h4>Urbino - Fermignano</h4>
         <button> Scarica </button>
@@ -157,5 +273,4 @@
         <h4>Scheggia - Gubbio</h4>
         <button> Scarica </button>
     </div>
-    <hr>
-</html>
+    <hr>-->

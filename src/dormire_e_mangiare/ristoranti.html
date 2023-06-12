@@ -1,10 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="it">
     <head>
         <title> Ristoranti </title>
 
     <!--Foglio di stile-->
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="icon" type="image/x-icon" href="../../media/favicon.ico">
     <!-- IonIcons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -12,10 +13,11 @@
     </head>
 
     <style>
-    h2 {
+ h2 {
         font-family: 'Wix Madefor Display', sans-serif;
         margin-left: 50px;
     }
+
     #container-ex {
         width: 90%;
         display:flex;
@@ -42,134 +44,132 @@
     <body>
         <body>
             <!-- Navbar -->
-            <nav>
-                <!-- Logo -->
-                <!--<div class="logo">Urbino</div>-->
-                <div class="logo">
-                    <a href="index.html"><img src="media/hotel/logo.png" alt=""></a>
-                </div>
-                <label for="btn" class="icon">
-                    <span class="fa fa-bars"><ion-icon name="menu-outline"></ion-icon></span>
-                </label>
-                <input type="checkbox" id="btn">
-        
-                <!-- Inizio elenco -->
+       <nav>
+        <!-- Logo -->
+        <!--<div class="logo">Urbino</div>-->
+        <div class="logo">
+            <a href="../../index.html"><img src="../../media/logomod.png" alt=""></a>
+        </div>
+        <label for="btn" class="icon">
+            <span class="fa fa-bars"><ion-icon name="menu-outline"></ion-icon></span>
+        </label>
+        <input type="checkbox" id="btn">
+
+        <!-- Inizio elenco -->
+        <ul>
+            <!-- 1 -->
+            <li>
+                <label for="btn-1" class="show">Percorso e tratte +</label>
+                <a href="#">Percorso e tratte</a>
+                <input type="checkbox" id="btn-1">
+                <!-- Sottoelenco 1 -->
                 <ul>
-                    <!-- 1 -->
-                    <li>
-                        <label for="btn-1" class="show">Percorso e Tratte +</label>
-                        <a href="#">Percorso e Tratte</a>
-                        <input type="checkbox" id="btn-1">
-                        <!-- Sottoelenco 1 -->
-                        <ul>
-                            <li><a href="#">Itinerario (WebGIS)</a></li>
-                            <li><a href="#">Tratte (GPX)</a></li>
-                            <li><a href="#">Preparati al percorso</a></li>
-                            <li><a href="#">Segnaletica</a></li>
-                            <li><a href="#">Credenziale</a></li>
-                        </ul>
-                    </li>
-        
-                    <!-- 2 -->
-                    <li>
-                        <label for="btn-2" class="show">Storia e geografia +</label>
-                        <a href="#">Storia e geografia</a>
-                        <input type="checkbox" id="btn-2">
-                        <ul>
-                            <li><a href="#">Geologia del cammino</a></li>
-                            <li><a href="#">La storia dell'uomo</a></li>
-                            <li><a href="#">Storie e geografie del Duca</a></li>
-                            <li><a href="#">Geografia della cucina locale</a></li>
-                            <li><a href="#">Vino o birra?</a></li>
-                            <li><a href="#">Tradizioni</a></li>
-                            <li><a href="#">Natura e ambiente</a></li>
-                        </ul> 
-                    </li>
-        
-                    <!-- 3 -->
-                    <li>
-                        <label for="btn-3" class="show">Arrivare e muoversi +</label>
-                        <a href="#">Arrivare e muoversi</a>
-                        <input type="checkbox" id="btn-3">
-                        <ul>
-                            <li><a href="#">Arrivare ad Urbino</a></li>
-                            <li><a href="#">Arrivare a Gubbio</a></li>
-                            <li><a href="#">Collegamenti Gubbio - Urbino</a></li>
-                            <li><a href="#">Noleggi</a></li>
-                            <li><a href="#">Autolinee</a></li>
-                            <li><a href="#">Taxi</a></li>
-                        </ul>
-                    </li>
-        
-                    <!-- 4 -->
-                    <li>
-                        <label for="btn-4" class="show">Dormire e mangiare +</label>
-                        <a href="#">Dormire e mangiare</a>
-                        <input type="checkbox" id="btn-4">
-                        <ul>
-                            <li><a href="#">Hotel</a></li>
-                            <li><a href="#">B&B</a></li>
-                            <li><a href="#">Ostelli</a></li>
-                            <li><a href="#">Tende</a></li>
-                            <li><a href="#">Bar</a></li>
-                            <li><a href="#">Alimentari</a></li>
-                            <li><a href="#">Gastronomie</a></li>
-                            <li><a href="#">Osterie</a></li>
-                            <li><a href="#">Ristoranti</a></li>
-                            <li><a href="#">Pizzerie</a></li>
-                        </ul>
-                    </li>
-        
-                    <!-- 5 -->
-                    <li>
-                        <label for="btn-5" class="show">Attività e giochi +</label>
-                        <a href="#">Attività e giochi</a>
-                        <input type="checkbox" id="btn-5">
-                        <ul>
-                            <li><a href="#">Test del camminatore</a></li>
-                            <li><a href="#">Contest fotografici</a></li>
-                            <li><a href="#">Viaggi di gruppo</a></li>
-                            <li><a href="#">Orientamento</a></li>
-                            <li><a href="#">Geologo per un giorno</a></li>
-                            <li><a href="#">Altre attività</a></li>
-                        </ul>
-                    </li>
-        
-                    <!-- 6 -->
-                    <li>
-                        <label for="btn-6" class="show">Info e sicurezza +</label>
-                        <a href="../info_e_sicurezza/info.html">Info e sicurezza</a>
-                        <input type="checkbox" id="btn-6">
-                        <ul>
-                            <li><a href="../info_e_sicurezza/info.html">Info</a></li>
-                            <li><a href="../info_e_sicurezza/sicurezza.html">Sicurezza</a></li>
-                        </ul>
-                    </li>
-        
-                    <!--<li>
-                        <div class="others">
-                            <div class="languages">
-                                <a href="#"><ion-icon name="language-outline"></ion-icon></a>
-                            </div>
-                            <div class="login">
-                                <a href="#"><ion-icon name="person-outline"></ion-icon></a>
-                            </div>
-                        </div>
-                    </li>-->
-        
-        
-                    <!-- Traduzione e login -->
-                    <li class="lang-log">
-                        <a href="#"><ion-icon name="language-outline"></ion-icon></a>
-                        <a href="#"><ion-icon name="person-outline"></ion-icon></a>
-                    </li>
+                    <li><a href="../percorso_e_tratte/preparati_al_percorso.html">Preparati al Cammino</a></li>
+                    <li><a href="http://webgis.ilcamminodelduca.it">Mappa (WebGIS)</a></li>
+                    <li><a href="../percorso_e_tratte/tratte.html">Itinerario</a></li>
+                    <li><a href="../percorso_e_tratte/segnaletica.html">Segnaletica</a></li>
+                    <li><a href="../percorso_e_tratte/credenziale.html">Credenziale</a></li>
                 </ul>
-            </nav>
+            </li>
+
+            <!-- 2 -->
+            <li>
+                <label for="btn-2" class="show">Geografie e storie +</label>
+                <a href="#">Geografie e storie</a>
+                <input type="checkbox" id="btn-2">
+                <ul>
+                    <li><a href="../storia_e_geografie/geologia_del_cammino.html">GEOTRAIL</a></li>
+                    <li><a href="../storia_e_geografie/la_storia_dell_uomo.html">La storia dell'uomo</a></li>
+                    <li><a href="../storia_e_geografie/storie_e_geografie_del_duca.html">Storie e geografie del Duca</a></li>
+                    <li><a href="../storia_e_geografie/geografia_della_cucina_locale.html">Geografia della cucina locale</a></li>
+                    <li><a href="../storia_e_geografie/tradizioni.html">Tradizioni</a></li>
+                    <li><a href="../storia_e_geografie/natura_e_ambiente.html">Natura e ambiente</a></li>
+                </ul> 
+            </li>
+
+            <!-- 3 -->
+            <li>
+                <label for="btn-3" class="show">Arrivare e muoversi +</label>
+                <a href="#">Arrivare e muoversi</a>
+                <input type="checkbox" id="btn-3">
+                <ul>
+                    <li><a href="../arrivare_e_muoversi/arrivare_a_urbino.html">Arrivare ad Urbino</a></li>
+                    <li><a href="../arrivare_e_muoversi/arrivare_a_gubbio.html">Arrivare a Gubbio</a></li>
+                    <li><a href="../arrivare_e_muoversi/collegamenti_gubbio_urbino.html">Collegamenti Gubbio - Urbino</a></li>
+                    <li><a href="../arrivare_e_muoversi/noleggi.html">Noleggi</a></li>
+                    <li><a href="../arrivare_e_muoversi/autolinee_e_taxi.html">Autolinee</a></li>
+                    <li><a href="../arrivare_e_muoversi/autolinee_e_taxi.html">Taxi</a></li>
+                </ul>
+            </li>
+
+            <!-- 4 -->
+            <li>
+                <label for="btn-4" class="show">Dormire e mangiare +</label>
+                <a href="#">Dormire e mangiare</a>
+                <input type="checkbox" id="btn-4">
+                <ul>
+                    <li><a href="../dormire_e_mangiare/hotel.html">Hotel</a></li>
+                    <li><a href="../dormire_e_mangiare/b_and_b.html">B&B</a></li>
+                    <li><a href="../dormire_e_mangiare/ostelli.html">Ostelli</a></li>
+                    <li><a href="../dormire_e_mangiare/tende.html">Tende</a></li>
+                    <li><a href="../dormire_e_mangiare/bar.html">Bar</a></li>
+                    <li><a href="../dormire_e_mangiare/alimentari.html">Alimentari</a></li>
+                    <li><a href="../dormire_e_mangiare/gastronomie.html">Gastronomie</a></li>
+                    <li><a href="../dormire_e_mangiare/osterie.html">Osterie</a></li>
+                    <li><a href="../dormire_e_mangiare/ristoranti.html">Ristoranti</a></li>
+                    <li><a href="../dormire_e_mangiare/pizzerie.html">Pizzerie</a></li>
+                </ul>
+            </li>
+
+            <!-- 5 -->
+            <li>
+                <label for="btn-5" class="show">Attività e giochi +</label>
+                <a href="#">Attività e giochi</a>
+                <input type="checkbox" id="btn-5">
+                <ul>
+                    <li><a href="../attivita_e_giochi/test_del_camminatore.html">Test del camminatore</a></li>
+                    <li><a href="../attivita_e_giochi/contest_fotografici.html">Contest fotografici</a></li>
+                    <li><a href="../attivita_e_giochi/viaggi_di_gruppo.html">Viaggi di gruppo</a></li>
+                    <li><a href="../attivita_e_giochi/orientamento.html">Orientamento</a></li>
+                    <li><a href="../attivita_e_giochi/geologo_per_un_giorno.html">Geologo per un giorno</a></li>
+                    <li><a href="../attivita_e_giochi/altre_attivita.html">Altre attività</a></li>
+                </ul>
+            </li>
+
+            <!-- 6 -->
+            <li>
+                <label for="btn-6" class="show">Info e sicurezza +</label>
+                <a href="#">Info e sicurezza</a>
+                <input type="checkbox" id="btn-6">
+                <ul>
+                    <li><a href="../info_e_sicurezza/info.html">Centri informazioni</a></li>
+                    <li><a href="../info_e_sicurezza/sicurezza.html">Sicurezza e soccorsi</a></li>
+                </ul>
+            </li>
+
+            <!-- Traduzione e login -->
+            <li class="lang-log">
+                <a><ion-icon name="language-outline"></ion-icon></a>
+                <ul id="languages">
+                    <li><a href="#">Italiano</a></li>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Español</a></li>
+                </ul>
+            </li>
+
+            <li class="lang-log">
+                <a href="../login/login.html"><ion-icon name="person-outline"></ion-icon></a>
+            </li>
+
+        </ul>
+    </nav>
+
             <br>
+
             <div class="container-ex">
                 <div>
-                    <h2><a id="hotel2">Ristoranti presso Urbino</a></h2>
-                    <div class="card-hotel-grid-1">
+                    <h2><a id="">Ristoranti Urbino</a></h2>
+                    <div class="card-hotel-grid-3">
                         <div class="card-hotel">
                             <div class="card-hotel-img">
                                 <img src="media/ristoranti/downloads.jpg">
@@ -177,33 +177,67 @@
                             <div class="card-body">
                                 <p id="title"> La Terrazza del Duca Urbino</p>
                                 <div id="more">
-                                    <p>
-                                        Num. Telefono: 0722 2826
-                                    </p>
-                                    <a href="https://www.tripadvisor.it/Restaurant_Review-g187797-d2645633-Reviews-La_Terrazza_del_Duca-Urbino_Province_of_Pesaro_and_Urbino_Marche.html">Link</a>
+                                    <p>Num. Telefono: 0722 2826</p>
+                                    <p>Indirizzo: Via Borgo Mercatale, 22, 61029 Urbino PU</p>
+                                    <a href="https://www.tripadvisor.it/Restaurant_Review-g187797-d2645633-Reviews-La_Terrazza_del_Duca-Urbino_Province_of_Pesaro_and_Urbino_Marche.html">Sito web</a>
                                 </div>
-                                <p class="readmore">
-                                </p>
                             </div>
+                            <p class="readmore"></p>
+                        </div>
+
+                        <div class="card-hotel">
+                            <!-- Sezione immagine -->
+                            <div class="card-hotel-img">
+                                <img src="media/ristoranti/FlowerzCaffè.PNG">
+                            </div>
+                            <div class="card-body">
+                                <p id="title">Flowerz caffè</p>
+                                <div id="more">
+                                    <p>Ristorante</p>
+                                    <p>Num. Telefono: 375 610 5522</p>
+                                    <p>Indirizzo: Via Giuseppe Mazzini, 99, 61029 Urbino PU</p>
+                                    <a href="">Sito web</a>
+                                </div>
+                            </div>
+                            <p class="readmore"></p>
+                        </div>
+
+                        <div class="card-hotel">
+                            <!-- Sezione immagine -->
+                            <div class="card-hotel-img">
+                                <img src="media/ristoranti/download3.jpg">
+                            </div>
+                            <div class="card-body">
+                                <p id="title">Caffè degli Angeli</p>
+                                <div id="more">
+                                    <p>Ristorante</p>
+                                    <p>Num. Telefono: 347 863 5276</p>
+                                    <p>Indirizzo: Borgo Mercatale, 21, 61029 Urbino PU</p>
+                                    <a href="https://www.tripadvisor.it/Restaurant_Review-g187797-d15758320-Reviews-Caffe_degli_Angeli-Urbino_Province_of_Pesaro_and_Urbino_Marche.html">Sito web</a>
+                                </div>
+                            </div>
+                            <p class="readmore"></p>
                         </div>
                     </div>
-                    <h2><a id="hotel2">Ristoranti presso Fermignano</a></h2>
+
+                    <br>
+
+                    <h2><a id="">Ristoranti Fermignano</a></h2>
                     <div class="card-hotel-grid-3">
                         <div class="card-hotel">
                             <div class="card-hotel-img">
-                                <img src="media/ristoranti/2fa4b5ae-94d8-4aef-b6aa-b3e011d91390.avif">
+                                <img src="media/ristoranti/6197DA6A-B597-4BC9-8B20-73CB0046A2D7.jpg">
                             </div>
                             <div class="card-body">
-                                <p id="title"> Burgheria Steakhouse "da Bindo"</p>
+                                <p id="title"> Trattosteria Ristorante Enoteca Affittacamere</p>
                                 <div id="more">
-                                    <p>
-                                        Num. Telefono: 0722 331407
-                                        <a href="https://www.tripadvisor.it/Restaurant_Review-g187797-d2645633-Reviews-La_Terrazza_del_Duca-Urbino_Province_of_Pesaro_and_Urbino_Marche.html"></a>
-                                    </p>
+                                    <p>Ristorante</p>
+                                    <p>Num. Telefono: 349 326 8263</p>
+                                    <p>Indirizzo: Via Vittorio Veneto, 54, 61033 Fermignano PU</p>
+                                    <a href="https://www.tripadvisor.it/Restaurant_Review-g1531840-d1845414-Reviews-Trattosteria-Fermignano_Province_of_Pesaro_and_Urbino_Marche.html">Sito web</a>
                                 </div>
-                                <p class="readmore">
-                                </p>
                             </div>
+                            <p class="readmore"></p>
                         </div>
                         <div class="card-hotel">
                             <div class="card-hotel-img">
@@ -212,15 +246,15 @@
                             <div class="card-body">
                                 <p id="title">Ristorante "Bramante"</p>
                                 <div id="more">
-                                    <p>
-                                        Num. Telefono: 327 197 1960
-                                        <a href="https://www.tripadvisor.it/Restaurant_Review-g1531840-d5532549-Reviews-Ristorante_Bramante-Fermignano_Province_of_Pesaro_and_Urbino_Marche.html"></a>
-                                    </p>
+                                    <p>Ristorante</p>
+                                    <p>Num. Telefono: 327 197 1960</p>
+                                    <p>Indirizzo: Viale Martiri della Libertà, 17, 61033 Fermignano PU</p>
+                                    <a href="https://www.tripadvisor.it/Restaurant_Review-g1531840-d5532549-Reviews-Ristorante_Bramante-Fermignano_Province_of_Pesaro_and_Urbino_Marche.html">Sito web</a>
                                 </div>
-                                <p class="readmore">
-                                </p>
                             </div>
+                            <p class="readmore"></p>
                         </div>
+
                         <div class="card-hotel">
                             <div class="card-hotel-img">
                                 <img src="media/ristoranti/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2b1fTvdwG85tnlgp5gPzY7ZeSE_zXhSBneXYxJm_HV5PUiafs3mdtLAkbaxMYwQddg.webp">
@@ -228,18 +262,35 @@
                             <div class="card-body">
                                 <p id="title">Ristorante "La Pieve da Leo"</p>
                                 <div id="more">
-                                    <p>
-                                        Num. Telefono: 0722 331117
-                                        <a href="https://www.tripadvisor.it/Restaurant_Review-g1531840-d19974819-Reviews-La_Pieve_Da_Leo-Fermignano_Province_of_Pesaro_and_Urbino_Marche.html"></a>
-                                    </p>
+                                    <p>Ristorante</p>
+                                    <p>Num. Telefono: 0722 331117</p>
+                                    <p>Indirizzo: Via Polidoro Virgili, n. 8, 61033</p>
+                                    <a href="https://www.tripadvisor.it/Restaurant_Review-g1531840-d19974819-Reviews-La_Pieve_Da_Leo-Fermignano_Province_of_Pesaro_and_Urbino_Marche.html">Sito web</a>
                                 </div>
-                                <p class="readmore">
-                                </p>
                             </div>
-                        </div>                        
+                            <p class="readmore"></p>
+                        </div>   
+                        
+                        <div class="card-hotel">
+                            <!-- Sezione immagine -->
+                            <div class="card-hotel-img">
+                                <img src="media/ristoranti/download4.jpg">
+                            </div>
+                            <div class="card-body">
+                                <p id="title">Ristorante Pizzeria El Mascaron</p>
+                                <div id="more">
+                                    <p>Ristornate</p>
+                                    <p>Num. Telefono: 0722 331683</p>
+                                    <p>Indirizzo: Via Mazzini, 44, 61033</p>
+                                    <a href="https://www.tripadvisor.it/Restaurant_Review-g1531840-d5281533-Reviews-Ristorante_Pizzeria_El_Mascaron-Fermignano_Province_of_Pesaro_and_Urbino_Marche.html">Sito web</a>
+                                </div>
+                            </div>
+                            <p class="readmore"></p>
+                        </div>
                     </div>
+                    <br>
                 
-                <h2><a id="hotel2">Ristoranti presso il Furlo</a></h2>
+                <h2><a id="hotel2">Ristoranti Furlo</a></h2>
                 <div class="card-hotel-grid-3">
                     <div class="card-hotel">
                         <div class="card-hotel-img">
@@ -248,12 +299,13 @@
                         <div class="card-body">
                             <p id="title"> Ristorante "Antico Furlo"</p>
                             <div id="more">
-                                Num. Telefono: 0721 700096
-                                <a href="https://www.tripadvisor.it/Restaurant_Review-g1050048-d1931653-Reviews-Ristorante_Antico_Furlo-Acqualagna_Province_of_Pesaro_and_Urbino_Marche.html">Link</a>
+                                <p>Ristorante</p>
+                                <p>Num. Telefono: 0721 700096</p>
+                                <p>Indirizzo: Via Furlo, 60, 61041 Acqualagna PU</p>
+                                <a href="https://www.tripadvisor.it/Restaurant_Review-g1050048-d1931653-Reviews-Ristorante_Antico_Furlo-Acqualagna_Province_of_Pesaro_and_Urbino_Marche.html">Sito web</a>
                             </div>
-                            <p class="readmore">
-                            </p>
                         </div>
+                        <p class="readmore"></p>
                     </div>
                     <div class="card-hotel">
                         <div class="card-hotel-img">
@@ -262,45 +314,52 @@
                         <div class="card-body">
                             <p id="title">Chiosco delle Acquile</p>
                             <div id="more">
+                                <p>Ristorante</p>
                                 <p>Num. Telefono: 0721 700096</p>
-                                <a href="https://www.tripadvisor.it/Restaurant_Review-g1050048-d4402816-Reviews-Chiosco_delle_Aquile-Acqualagna_Province_of_Pesaro_and_Urbino_Marche.html">Link</a>
+                                <p>Indirizzo: Strada di Pietralata, 21, 61041 Acqualagna PU</p>
+                                <a href="https://www.tripadvisor.it/Restaurant_Review-g1050048-d4402816-Reviews-Chiosco_delle_Aquile-Acqualagna_Province_of_Pesaro_and_Urbino_Marche.html">Sito web</a>
                             </div>
-                            <p class="readmore">
-                            </p>
                         </div>
+                        <p class="readmore"></p>
                     </div>
+
                     <div class="card-hotel">
+                        <!-- Sezione immagine -->
                         <div class="card-hotel-img">
                             <img src="media/ristoranti/download.jpg">
                         </div>
                         <div class="card-body">
-                            <p id="title">Ristorante "La Ginestra"</p>
+                            <p id="title">La Ginestra Ristorante e Bike Hotel</p>
                             <div id="more">
+                                <p>Ristorante</p>
                                 <p>Num. Telefono: 0721 797033</p>
-                                <a href="https://www.ginestrafurlo.it/">Link</a>
+                                <p>Indirizzo: Via Furlo, 15-17, 61041 Acqualagna PU</p>
+                                <a href="https://www.ginestrafurlo.it/">Sito web</a>
                             </div>
-                            <p class="readmore">
-                            </p>
                         </div>
+                        <p class="readmore"></p>
                     </div>
-                </div>
-                <h2><a id="hotel2">Ristoranti presso Acqualagna</a></h2>
-                <div class="card-hotel-grid-1">
+
                     <div class="card-hotel">
                         <div class="card-hotel-img">
                             <img src="media/ristoranti/download2.jpg">
                         </div>
                         <div class="card-body">
-                        <p id="title"> Ristorante "Birra al Pozzo"</p>
-                        <div id="more">
-                            <p>Num. Telefono: 0721 700084</p>
-                            <a href="https://www.tripadvisor.it/Restaurant_Review-g1050048-d5499165-Reviews-Birra_Al_Pozzo-Acqualagna_Province_of_Pesaro_and_Urbino_Marche.html">Link</a>
+                            <p id="title"> Ristorante "Birra al Pozzo"</p>
+                            <div id="more">
+                                <p>Ristorante</p>
+                                <p>Num. Telefono: 0721 700084</p>
+                                <p>Indirizzo: Pianacce, 12, 61041 Acqualagna PU</p>
+                                <a href="https://www.tripadvisor.it/Restaurant_Review-g1050048-d5499165-Reviews-Birra_Al_Pozzo-Acqualagna_Province_of_Pesaro_and_Urbino_Marche.html">Sito web</a>
+                            </div>
                         </div>
-                        <p class="readmore">
-                        </p>
+                        <p class="readmore"></p>
                     </div>
                 </div>
-                <h2><a id="hotel2">Ristoranti presso Frontone</a></h2>
+
+                <br>
+
+                <h2><a id="">Ristoranti Molleone</a></h2>
                 <div class="card-hotel-grid-2">
                     <div class="card-hotel">
                         <div class="card-hotel-img">
@@ -309,11 +368,13 @@
                         <div class="card-body">
                             <p id="title">"Alla Locanda Di Fontebella"</p>
                             <div id="more">
-                                Num. Telefono: 0721 787007
+                                <p>Ristorante</p>
+                                <p>Num. Telefono: 0721 787007</p>
+                                <p>Indirizzo: Via Colombara, 61040 Buonconsiglio-colombara PU</p>
+                                <a href="https://it.tripadvisor.ch/ShowUserReviews-g2007592-d8414798-r325423135-Alla_locanda_di_Fontebella-Frontone_Province_of_Pesaro_and_Urbino_Marche.html">Sito web</a>
                             </div>
-                            <p class="readmore">
-                            </p>
                         </div>
+                        <p class="readmore"></p>
                     </div>
                     <div class="card-hotel">
                         <div class="card-hotel-img">
@@ -322,24 +383,28 @@
                         <div class="card-body">
                             <p id="title">Taverna della Rocca</p>
                             <div id="more">
-                                Num. Telefono: 0721 786218
+                                <p>Ristoranti</p>
+                                <p>Num. Telefono: 0721 786218</p>
+                                <p>Indirizzo: Via Giacomo Leopardi, 20/22, 61040 Castello PU</p>
+                                <a href="https://www.tripadvisor.it/Restaurant_Review-g2007592-d2005930-Reviews-Taverna_della_Rocca-Frontone_Province_of_Pesaro_and_Urbino_Marche.html">Sito web</a>
                             </div>
-                            <p class="readmore"></p>
                         </div>
+                        <p class="readmore"></p>
                     </div>
                 </div>
-            
-    <script>
-        let more = document.querySelectorAll('.readmore');
-        for(let i=0; i<more.length; i++){
-            more[i].addEventListener('click', function(){
-                console.log("HO cliccato!");
-                if (more[i].parentNode.childNodes.item(3).id === "more")
-                    more[i].parentNode.childNodes.item(3).id += " active";
-                else 
-                    more[i].parentNode.childNodes.item(3).id = "more"
-            })
-        }        
-    </script>
+                <script>
+                    let more = document.querySelectorAll('.readmore');
+                    for(let i=0; i<more.length; i++){
+                        more[i].addEventListener('click', function(){
+                            more[i].parentNode.classList.toggle('active');
+                        })
+                    }
+                    
+                </script>
+
     </body>
 </html>
+
+
+
+
