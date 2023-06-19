@@ -5,6 +5,8 @@ import {GeoJSON} from "ol/format";
 import {all as allStrategy} from "ol/loadingstrategy";
 import VectorLayer from "ol/layer/Vector";
 import {Fill, Icon, RegularShape, Stroke, Style} from "ol/style";
+import {ImageWMS, Raster, TileImage, TileWMS} from "ol/source";
+import ImageLayer from "ol/layer/Image";
 
 //GeoJSON data folder.
 const geoJSONFolder = "webgis/data/";
@@ -29,6 +31,48 @@ const mapLayerParam =
 
 //Tile layer.
 export const mapLayer = new TileLayer(mapLayerParam);
+
+//Geologic layer source.
+const geoserverUrl = "http://wms.cartografia.marche.it/geoserver/Geologia/wms";
+const geologicLayerSource = new ImageWMS(
+	{
+		url: geoserverUrl,
+		params:
+			{
+				layers: 'CartaGeologica',
+				tiled: true,
+				srs: 'EPSG:4326',
+				bgcolor: "0xFFFFFF",
+				transparent: true,
+				format: "image/png",
+			},
+		crossOrigin: 'anonymous',
+		serverType: 'geoserver',
+	});
+
+//Convert to raster for editing.
+const modifiedGeologicSource = new Raster(
+	{
+		sources: [geologicLayerSource],
+		crossOrigin: 'anonymous',
+		operation: (pixels, data) =>
+		{
+			let pixel = pixels[0];
+
+			if (pixel[0] === 255 && pixel[1] === 255 && pixel[2] === 255)
+				pixel[3] = 0;
+
+			return pixels[0];
+		}
+	});
+
+//Geologic layer
+export const geologicLayer = new ImageLayer(
+	{
+		title: "Carta Geologica",
+		visible: false,
+		source: modifiedGeologicSource,
+	});
 
 //Tracks layer source.
 const trackSource = new VectorSource(

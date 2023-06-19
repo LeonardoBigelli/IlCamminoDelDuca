@@ -4,7 +4,7 @@ import {Map, Overlay, View} from 'ol';
 import {Select} from "ol/interaction";
 import {click} from "ol/events/condition";
 import {
-    foodAndSleepLayer,
+    foodAndSleepLayer, geologicLayer,
     iconPath,
     iconStyle,
     infoAndSafetyLayer,
@@ -15,7 +15,7 @@ import {
 import LayerGroup from "ol/layer/Group";
 import {Fill, Icon, RegularShape, Stroke, Style} from "ol/style";
 import {foodAndDrinkCategories, infoAndSafetyCategories, sectionsCategories, tracksCategories} from "./legend";
-import {LegendEntryCategorized, WebGISLegend} from "./WebGisLegend";
+import {LegendEntry, LegendEntryCategorized, WebGISLegend} from "./WebGisLegend";
 
 const viewStartingPos = [1409646.026322705, 5394869.494452778]; //Starting position of the view.
 
@@ -23,13 +23,14 @@ const viewStartingPos = [1409646.026322705, 5394869.494452778]; //Starting posit
 async function waitSourcesLoading()
 {
     const tracksPromise = new Promise(resolve =>
-        tracksLayer.getSource().on("featuresloadend", resolve))
+        tracksLayer.getSource().on("featuresloadend", resolve));
     const sectionsPromise = new Promise(resolve =>
-        sectionsLayer.getSource().on("featuresloadend", resolve))
+        sectionsLayer.getSource().on("featuresloadend", resolve));
     const foodPromise = new Promise(resolve =>
-        foodAndSleepLayer.getSource().on("featuresloadend", resolve))
+        foodAndSleepLayer.getSource().on("featuresloadend", resolve));
     const infoPromise = new Promise(resolve =>
         infoAndSafetyLayer.getSource().once("featuresloadend", resolve));
+
 
     return Promise.all([tracksPromise, sectionsPromise, foodPromise, infoPromise]);
 }
@@ -106,7 +107,7 @@ const mapView = new View(
 const map = new Map(
     {
         target: 'webgis',
-        layers: [mapLayer, tracksLayer, sectionsLayer, poiLayerGroup],
+        layers: [mapLayer, geologicLayer, tracksLayer, sectionsLayer, poiLayerGroup],
         view: mapView
     });
 
@@ -289,11 +290,13 @@ waitSourcesLoading().then(() =>
     const tracksFilter = (category, feature) =>
         category.id === feature.get("id");
 
+    const geologicLegendEntry = new LegendEntry(geologicLayer);
     const tracksLegendEntry = new LegendEntryCategorized(tracksLayer, tracksCategories, tracksFilter);
     const sectionsLegendEntry = new LegendEntryCategorized(sectionsLayer, sectionsCategories, tracksFilter);
     const foodAndSleepLegendEntry = new LegendEntryCategorized(foodAndSleepLayer, foodAndDrinkCategories, iconFilter);
     const infoAndSafetyLegendEntry = new LegendEntryCategorized(infoAndSafetyLayer, infoAndSafetyCategories, iconFilter);
 
+    legend.addEntry(geologicLegendEntry);
     legend.addEntry(tracksLegendEntry);
     legend.addEntry(sectionsLegendEntry);
     legend.addEntry(foodAndSleepLegendEntry);
